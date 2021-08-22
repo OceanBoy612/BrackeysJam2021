@@ -16,7 +16,7 @@ export var reload_time: float = 1.0
 var aiming_dir = Vector2(1,0)
 var move_dir = Vector2(0,0)
 
-var draw_pile = []
+var draw_pile = [] # Array of Strings - use Globals to access and load
 var discard_pile = []
 
 
@@ -45,14 +45,25 @@ func can_shoot():
 
 
 func shoot():
-	var current_card = draw_pile.pop_front()
-	# DO STUFF
 	print("Shoot")
-	discard_pile.push_back(current_card)
-	
 	if draw_pile.empty():
 		shuffle()
-		
+	
+	var current_card_name = draw_pile.pop_front()
+	
+	if not current_card_name in Globals.items:
+		push_error("Card not in Globals! %s" % current_card_name)
+		return
+	
+	# instance from Globals
+	var bullet: EntityBase = Globals.items[current_card_name].instance()
+	bullet.position = position
+	bullet.mode = bullet.Modes.BulletMode
+	bullet.rotate($Aimer.rotation)
+	get_parent().add_child(bullet)
+	
+	discard_pile.push_back(current_card_name)
+	
 	time_since_last_shot = OS.get_system_time_secs()
 	
 	emit_signal("shot")
@@ -85,9 +96,9 @@ func update_aimer_position():
 		$Aimer.scale.y = 1
 
 
-
-
-
+func pickup_item(item: String):
+	print("Picked up item, ", item)
+	discard_pile.append(item)
 
 
 

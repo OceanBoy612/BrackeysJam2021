@@ -1,5 +1,6 @@
 extends AnimatedSprite
 
+
 func _physics_process(delta):
 	var player = get_parent()
 	

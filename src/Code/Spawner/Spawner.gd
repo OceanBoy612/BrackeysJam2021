@@ -14,7 +14,8 @@ export var delay: float = 1
 func _ready():
 	add_to_group("spawners")
 	$Timer.wait_time = delay
-	$Timer.start()
+	if amount>0:
+		$Timer.start()
 	emit_signal("created")
 
 
