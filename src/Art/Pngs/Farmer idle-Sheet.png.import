@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Farmer idle-Sheet.png-7eec985ca85f9294160e9cff35706b84.stex"
+path="res://.import/Farmer idle-Sheet.png-d52bd73f6f62532d867377b903c615b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Farmer idle-Sheet.png"
-dest_files=[ "res://.import/Farmer idle-Sheet.png-7eec985ca85f9294160e9cff35706b84.stex" ]
+source_file="res://Art/Pngs/Farmer idle-Sheet.png"
+dest_files=[ "res://.import/Farmer idle-Sheet.png-d52bd73f6f62532d867377b903c615b5.stex" ]
 
 [params]
 
