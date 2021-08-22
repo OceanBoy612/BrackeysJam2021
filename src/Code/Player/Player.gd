@@ -77,7 +77,7 @@ func get_dir_to_mouse() -> Vector2:
 
 func update_aimer_position():
 	$Aimer.position = $Aimer.position.rotated($Aimer.position.angle_to(aiming_dir))
-	$Aimer.look_at(get_global_mouse_position())
+	$Aimer.look_at(global_position * aiming_dir * 100)
 	
 	if $Aimer.position.angle() < - PI / 2 or $Aimer.position.angle() > PI / 2:
 		$Aimer.scale.y = -1
@@ -88,13 +88,6 @@ func update_aimer_position():
 
 
 
-
-class Card:
-	extends Resource
-	
-	export(String) var name
-	export(Texture) var sprite
-	export(PackedScene) var entity
 
 
 
