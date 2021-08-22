@@ -25,7 +25,7 @@ position = Vector2( 0, 1.75162 )
 shape = SubResource( 1 )
 
 [node name="Aimer" type="Position2D" parent="."]
-position = Vector2( 10.7177, 0 )
+position = Vector2( 1.62408, 0 )
 
 [node name="Blunderbuss" type="AnimatedSprite" parent="Aimer"]
 frames = ExtResource( 4 )
