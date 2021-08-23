@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends Area2D
+
+signal picked_up
+
+export var item_name = \"Null\"
+
+
+func _on_GenericItem_body_entered(body):
+	# item was picked up
+	print(\"TEST\")
+	if body.has_method(\"pickup_item\"):
+		print(item_name)
+		body.pickup_item(item_name)
+		emit_signal(\"picked_up\")
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="GenericItem" type="Area2D"]
+script = SubResource( 1 )
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_KnifeItem_body_entered"]
+[connection signal="body_entered" from="." to="." method="_on_GenericItem_body_entered"]
