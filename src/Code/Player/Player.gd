@@ -22,6 +22,7 @@ var discard_pile = []
 
 func _ready():
 	Globals.player = self
+	$Aimer/Blunderbuss.connect("shot", self, "shoot")
 
 
 func _physics_process(_delta):
@@ -34,13 +35,24 @@ func _physics_process(_delta):
 	if move_dir.is_equal_approx(Vector2()):
 		emit_signal("moved")
 	
-	if can_shoot():
-		shoot()
+#	if can_shoot(): # full auto
+#		shoot()
 	
 	update() # debugging
 
 
-#func _input(_event):
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		charge_gun()
+	elif event.is_action_released("ui_accept"):
+		shoot_gun()
+
+
+func shoot_gun():
+	$Aimer/Blunderbuss.shoot()
+	
+func charge_gun():
+	$Aimer/Blunderbuss.windup()
 
 
 func can_shoot():
