@@ -5,7 +5,7 @@ func _physics_process(_delta):
 	var player = get_parent()
 	
 	if player.move_dir == Vector2.ZERO:
-		stop()
+		play("Idle")
 	else:
 		play("Walk")
 	
