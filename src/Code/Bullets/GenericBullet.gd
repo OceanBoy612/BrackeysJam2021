@@ -3,7 +3,12 @@ extends KinematicBody2D
 
 export var speed = 300
 export var damage = 1
-export var rotation_speed = 6
+var rotation_speed = 0
+export var rotate = true
+
+func _ready():
+	if rotate:
+		rotation_speed = rand_range(4, 12)
 
 func _physics_process(delta):
 	var _vel = move_and_slide(Vector2(1,0).rotated(rotation) * speed)

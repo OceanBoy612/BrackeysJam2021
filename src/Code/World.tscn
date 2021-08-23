@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
-[ext_resource path="res://Code/Enemies/Enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Code/Items/GenericItem.gd" type="Script" id=4]
-[ext_resource path="res://Code/Spawner/Spawner.gd" type="Script" id=5]
+[ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
+[ext_resource path="res://Code/World.gd" type="Script" id=3]
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Code/Spawner/Spawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=8]
@@ -13,6 +11,7 @@
 [ext_resource path="res://Code/Items/BroomItem.tscn" type="PackedScene" id=11]
 
 [node name="World" type="YSort"]
+script = ExtResource( 3 )
 
 [node name="Back" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -40,35 +39,28 @@ tile_data = PoolIntArray( -65504, 6, 0, 34, 6, 0, 65568, 6, 0, 131075, 6, 0, 262
 [node name="Spawners" type="Node2D" parent="."]
 position = Vector2( 93.6252, 54.7231 )
 
-[node name="Spawner" type="Position2D" parent="Spawners" instance=ExtResource( 7 )]
+[node name="Spawner" parent="Spawners" instance=ExtResource( 7 )]
 position = Vector2( 397.89, 154.368 )
-script = ExtResource( 5 )
-entity_tscn = ExtResource( 3 )
 amount = -1
 delay = 3.5
 
-[node name="Spawner2" type="Position2D" parent="Spawners" instance=ExtResource( 7 )]
+[node name="Spawner2" parent="Spawners" instance=ExtResource( 7 )]
 position = Vector2( 396.016, 32.4518 )
-script = ExtResource( 5 )
-entity_tscn = ExtResource( 3 )
 amount = -1
 delay = 3.772
 
-[node name="Player" type="KinematicBody2D" parent="." instance=ExtResource( 8 )]
+[node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 130.493, 168.055 )
-collision_layer = 2
-collision_mask = 5
-script = ExtResource( 2 )
 speed = 225
 reload_time_msecs = 100
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2( 0.705475, -2.87677 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 287.984, 160.67 )
+current = true
+script = ExtResource( 2 )
 
-[node name="KnifeItem" type="Area2D" parent="." instance=ExtResource( 6 )]
+[node name="KnifeItem" parent="." instance=ExtResource( 6 )]
 position = Vector2( 132.388, 178.854 )
-script = ExtResource( 4 )
-item_name = "knife"
 
 [node name="BroomItem" parent="." instance=ExtResource( 11 )]
 position = Vector2( 228.916, 107.657 )
@@ -78,6 +70,3 @@ position = Vector2( 217.792, 220.489 )
 
 [node name="LampItem" parent="." instance=ExtResource( 9 )]
 position = Vector2( 375.122, 183.408 )
-
-[connection signal="body_entered" from="KnifeItem" to="KnifeItem" method="_on_KnifeItem_body_entered"]
-[connection signal="body_entered" from="KnifeItem" to="KnifeItem" method="_on_GenericItem_body_entered"]
