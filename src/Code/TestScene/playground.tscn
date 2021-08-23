@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Code/Spawner/Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Code/Items/BroomItem.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Code/Items/LampItem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Code/Items/ChairItem.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,8 +18,14 @@ position = Vector2( 262.051, 121.335 )
 collision_mask = 1
 reload_time_msecs = 100
 
+[node name="LampItem" parent="." instance=ExtResource( 5 )]
+position = Vector2( 167.902, 146.786 )
+
 [node name="KnifeItem" parent="." instance=ExtResource( 2 )]
-position = Vector2( 253.385, 51.4263 )
+position = Vector2( 260.537, 64.0275 )
 
 [node name="BroomItem" parent="." instance=ExtResource( 4 )]
-position = Vector2( 147.127, 75.2663 )
+position = Vector2( 190.72, 57.5566 )
+
+[node name="ChairItem" parent="." instance=ExtResource( 7 )]
+position = Vector2( 208.77, 98.7658 )
