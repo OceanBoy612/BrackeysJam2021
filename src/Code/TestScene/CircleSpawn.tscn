@@ -13,7 +13,6 @@ reload_time_msecs = 100
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2( 0.705475, -2.87677 )
 current = true
-zoom = Vector2( 1.5, 1.5 )
 
 [node name="Spawners" type="Node2D" parent="Player"]
 position = Vector2( -186, -110.5 )
