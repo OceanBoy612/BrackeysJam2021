@@ -8,12 +8,12 @@
 
 [node name="Spawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 70.0018, 119.5 )
-amount = 0
+amount = 1
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 262.051, 121.335 )
 collision_mask = 1
-reload_time = 0.2
+reload_time_msecs = 100
 
 [node name="Knife" parent="." instance=ExtResource( 2 )]
-position = Vector2( 133.504, 122.946 )
+position = Vector2( 227.196, 125.067 )

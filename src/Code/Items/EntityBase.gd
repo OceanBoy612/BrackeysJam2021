@@ -69,8 +69,8 @@ func set_mode(new_mode) -> void:
 		Modes.EntityMode:
 			pass
 		Modes.BulletMode:
-			$PlayerDetector/Shape.set_deferred("disabled", true)
-			call_deferred("set_collision_mask_bit", 1, false) # don't hit the player
+			$PlayerDetector/Shape.disabled = true
+			set_collision_mask_bit(1, false) # don't hit the player
 	
 	mode = new_mode
 

@@ -1,7 +1,7 @@
 extends AnimatedSprite
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var player = get_parent()
 	
 	if player.move_dir == Vector2.ZERO:

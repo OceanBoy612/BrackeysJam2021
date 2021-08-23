@@ -5,12 +5,12 @@ class_name Player
 signal moved
 signal shot
 signal picked_up_item
-signal reloaded_deck
+signal shuffled_deck
 
 
 export var speed: int = 100
-var time_since_last_shot: float = OS.get_system_time_secs() - 1000
-export var reload_time: float = 1.0
+var time_since_last_shot: float = OS.get_system_time_msecs() - 1000
+export(int, 0, 4000, 50) var reload_time_msecs: int = 1000
 
 
 var aiming_dir = Vector2(1,0)
@@ -24,40 +24,43 @@ func _ready():
 	Globals.player = self
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	aiming_dir = get_dir_to_mouse()
 	update_aimer_position()
 	
 	move_dir = get_input_dir()
-	move_and_slide(move_dir * speed)
+	var _vel = move_and_slide(move_dir * speed)
 	
 	if move_dir.is_equal_approx(Vector2()):
 		emit_signal("moved")
-
-
-func _input(event):
+	
 	if can_shoot():
 		shoot()
+	
+	update() # debugging
+
+
+#func _input(_event):
 
 
 func can_shoot():
-	return Input.is_action_pressed("ui_accept") and OS.get_system_time_secs() - time_since_last_shot > reload_time
+	return Input.is_action_pressed("ui_accept") and OS.get_system_time_msecs() - time_since_last_shot > reload_time_msecs
 
 
 func shoot():
-	print("Shoot")
+#	print("Shoot")
 	if draw_pile.empty():
 		shuffle()
 	
 	var current_card_name = draw_pile.pop_front()
-	print("B")
+#	print("B")
 	if not current_card_name in Globals.items:
 		print("C")
 		push_error("Card not in Globals! %s" % current_card_name)
 		return
 	
 	# instance from Globals
-	print("A")
+#	print("A")
 	var bullet = Globals.items[current_card_name].instance()
 	bullet.position = position
 	bullet.rotate($Aimer.rotation)
@@ -65,7 +68,7 @@ func shoot():
 
 	discard_pile.push_back(current_card_name)
 
-	time_since_last_shot = OS.get_system_time_secs()
+	time_since_last_shot = OS.get_system_time_msecs()
 
 	emit_signal("shot")
 
@@ -74,6 +77,7 @@ func shuffle():
 	draw_pile = discard_pile
 	draw_pile.shuffle()
 	discard_pile = []
+	emit_signal("shuffled_deck")
 
 
 func get_input_dir() -> Vector2:
@@ -89,7 +93,7 @@ func get_dir_to_mouse() -> Vector2:
 
 func update_aimer_position():
 	$Aimer.position = $Aimer.position.rotated($Aimer.position.angle_to(aiming_dir))
-	$Aimer.look_at(global_position * aiming_dir * 100)
+	$Aimer.look_at(global_position + aiming_dir * 100)
 	
 	if $Aimer.position.angle() < - PI / 2 or $Aimer.position.angle() > PI / 2:
 		$Aimer.scale.y = -1
@@ -101,9 +105,11 @@ func pickup_item(item: String):
 	print("Picked up item, ", item)
 	discard_pile.append(item)
 	print(discard_pile)
+	emit_signal("picked_up_item")
 
 
-
+func _draw():
+	draw_line(Vector2(), aiming_dir * 100, Color("#00ff00"), 1.5)
 
 
 
