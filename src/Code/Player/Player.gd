@@ -39,13 +39,18 @@ func _physics_process(_delta):
 #		shoot()
 	
 	update() # debugging
-
-
-func _input(event):
-	if event.is_action_pressed("ui_accept"):
+	
+	if Input.is_action_pressed("ui_accept"):
 		charge_gun()
-	elif event.is_action_released("ui_accept"):
+	elif Input.is_action_just_released("ui_accept"):
 		shoot_gun()
+	
+
+#func _input(event):
+#	if event.is_action_pressed("ui_accept"):
+#		charge_gun()
+#	elif event.is_action_released("ui_accept"):
+#		shoot_gun()
 
 
 func shoot_gun():

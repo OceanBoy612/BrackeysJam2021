@@ -126,15 +126,15 @@ points = PoolVector2Array( 0, 19, 16, 19, 16, 32, 7, 32, 7, 31, 0, 31 )
 5/z_index = 0
 6/name = "Tree"
 6/texture = ExtResource( 1 )
-6/tex_offset = Vector2( 0, 0 )
+6/tex_offset = Vector2( -24, -48 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 32, 16, 64, 64 )
 6/tile_mode = 0
-6/occluder_offset = Vector2( 0, 0 )
+6/occluder_offset = Vector2( -24, -48 )
 6/occluder = SubResource( 6 )
-6/navigation_offset = Vector2( 0, 0 )
-6/shape_offset = Vector2( 0, 0 )
-6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/navigation_offset = Vector2( -24, -48 )
+6/shape_offset = Vector2( -24, -48 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, -24, -48 )
 6/shape = SubResource( 7 )
 6/shape_one_way = false
 6/shape_one_way_margin = 1.0
@@ -143,7 +143,7 @@ points = PoolVector2Array( 0, 19, 16, 19, 16, 32, 7, 32, 7, 31, 0, 31 )
 "one_way": false,
 "one_way_margin": 1.0,
 "shape": SubResource( 7 ),
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+"shape_transform": Transform2D( 1, 0, 0, 1, -24, -48 )
 } ]
 6/z_index = 0
 7/name = "Fence-Top-Left"

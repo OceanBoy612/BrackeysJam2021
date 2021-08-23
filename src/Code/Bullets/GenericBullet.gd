@@ -14,4 +14,6 @@ func _physics_process(delta):
 		if col.collider.has_method("damage"):
 			col.collider.damage(damage)
 			queue_free()
+		if col.collider is TileMap:
+			queue_free() # hit a wall
 		
