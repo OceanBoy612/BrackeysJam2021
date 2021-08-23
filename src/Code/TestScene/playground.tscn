@@ -17,6 +17,7 @@ collision_mask = 1
 reload_time_msecs = 100
 
 [node name="KnifeItem" parent="." instance=ExtResource( 2 )]
+position = Vector2( 253.385, 51.4263 )
 
 [node name="BroomItem" parent="." instance=ExtResource( 4 )]
 position = Vector2( 147.127, 75.2663 )
