@@ -59,6 +59,8 @@ position = Vector2( 287.984, 160.67 )
 current = true
 script = ExtResource( 2 )
 
+[node name="Tween" type="Tween" parent="Camera2D"]
+
 [node name="KnifeItem" parent="." instance=ExtResource( 6 )]
 position = Vector2( 132.388, 178.854 )
 

@@ -15,10 +15,13 @@ func _process(delta):
 		trauma = max(trauma - decay * delta, 0)
 		shake()
 
-
-func _on_player_dashed():
-	$Tween.interpolate_property(self, "zoom", zoom*0.95, zoom, 0.3, Tween.TRANS_QUART, Tween.EASE_OUT)
+func add_zoom(amount, time):
+	$Tween.interpolate_property(self, "zoom", zoom*amount, zoom, time, Tween.TRANS_QUART, Tween.EASE_OUT)
 	$Tween.start()
+
+
+
+
 
 
 
@@ -56,8 +59,6 @@ func add_trauma(amount):
 
 func shake():
 	var amount = pow(trauma, trauma_power)
-	
-	print("SHAKING")
 	noise_y += 1
 	rotation = max_roll * amount * noise.get_noise_2d(noise.seed, noise_y)
 	offset.x = max_offset.x * amount * noise.get_noise_2d(noise.seed*2, noise_y)
@@ -73,3 +74,6 @@ func _set_only_y(value):
 	only_y = value
 	if value:
 		only_x = false
+
+
+
