@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "KinematicBody2D",
 "class": "EntityBase",
 "language": "GDScript",
-"path": "res://Code/Entities/GodotFace/EntityBase.gd"
+"path": "res://Code/Items/EntityBase.gd"
 }, {
 "base": "Resource",
 "class": "Item",

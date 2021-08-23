@@ -1,21 +1,19 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Code/Entities/GodotFace/EntityBase.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Code/Spawner/Spawner.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Spawner" parent="." instance=ExtResource( 3 )]
 position = Vector2( 70.0018, 119.5 )
-entity_tscn = ExtResource( 2 )
 amount = 0
-
-[node name="EntityBase" parent="." instance=ExtResource( 2 )]
-position = Vector2( 187.051, 182.858 )
-mode = 0
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 262.051, 121.335 )
 collision_mask = 1
 reload_time = 0.2
+
+[node name="Knife" parent="." instance=ExtResource( 2 )]
+position = Vector2( 133.504, 122.946 )

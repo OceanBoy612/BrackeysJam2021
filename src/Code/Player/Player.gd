@@ -50,22 +50,23 @@ func shoot():
 		shuffle()
 	
 	var current_card_name = draw_pile.pop_front()
-	
+	print("B")
 	if not current_card_name in Globals.items:
+		print("C")
 		push_error("Card not in Globals! %s" % current_card_name)
 		return
 	
 	# instance from Globals
-	var bullet: EntityBase = Globals.items[current_card_name].instance()
+	print("A")
+	var bullet = Globals.items[current_card_name].instance()
 	bullet.position = position
-	bullet.mode = bullet.Modes.BulletMode
 	bullet.rotate($Aimer.rotation)
 	get_parent().add_child(bullet)
-	
+
 	discard_pile.push_back(current_card_name)
-	
+
 	time_since_last_shot = OS.get_system_time_secs()
-	
+
 	emit_signal("shot")
 
 
@@ -99,6 +100,7 @@ func update_aimer_position():
 func pickup_item(item: String):
 	print("Picked up item, ", item)
 	discard_pile.append(item)
+	print(discard_pile)
 
 
 
