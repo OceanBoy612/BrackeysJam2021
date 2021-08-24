@@ -10,3 +10,6 @@ onready var items = {
 	"chair": preload("res://Code/Bullets/ChairBullet.tscn"),
 }
 
+func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+

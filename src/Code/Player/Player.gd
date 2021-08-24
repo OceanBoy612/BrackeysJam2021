@@ -43,18 +43,18 @@ func _physics_process(_delta):
 #	if can_shoot(): # full auto
 #		shoot()
 	
-	if Input.is_action_pressed("ui_accept"):
+	if Input.is_action_pressed("shoot"):
 		charge_gun()
-	elif Input.is_action_just_released("ui_accept"):
+	elif Input.is_action_just_released("shoot"):
 		shoot_gun()
 	
 	update() # debugging
 
 
 #func _input(event):
-#	if event.is_action_pressed("ui_accept"):
+#	if event.is_action_pressed("shoot"):
 #		charge_gun()
-#	elif event.is_action_released("ui_accept"):
+#	elif event.is_action_released("shoot"):
 #		shoot_gun()
 
 
@@ -71,7 +71,7 @@ func charge_gun():
 
 
 func can_shoot():
-	return Input.is_action_pressed("ui_accept") and OS.get_system_time_msecs() - time_since_last_shot > reload_time_msecs
+	return Input.is_action_pressed("shoot") and OS.get_system_time_msecs() - time_since_last_shot > reload_time_msecs
 
 
 func shoot():
