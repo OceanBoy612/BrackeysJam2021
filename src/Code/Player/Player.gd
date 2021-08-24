@@ -35,6 +35,13 @@ func _physics_process(_delta):
 	
 	if move_dir.is_equal_approx(Vector2()):
 		emit_signal("moved")
+		
+	if move_dir == Vector2.ZERO:
+		if $WalkLoop.is_playing() == true:
+			$WalkLoop.stop()
+	else:
+		if $WalkLoop.is_playing() == false:
+			$WalkLoop.play()
 	
 #	if can_shoot(): # full auto
 #		shoot()
