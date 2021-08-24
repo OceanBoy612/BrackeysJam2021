@@ -4,6 +4,8 @@
 [ext_resource path="res://Code/Bullets/GenericBullet.tscn" type="PackedScene" id=2]
 
 [node name="LampBullet" instance=ExtResource( 2 )]
+damage = 2
+shot_cone = 20.0
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )

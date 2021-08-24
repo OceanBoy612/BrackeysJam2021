@@ -4,6 +4,7 @@
 [ext_resource path="res://Code/Bullets/GenericBullet.tscn" type="PackedScene" id=2]
 
 [node name="BroomBullet" instance=ExtResource( 2 )]
+damage = 3
 rotate = false
 
 [node name="Sprite" parent="." index="1"]
