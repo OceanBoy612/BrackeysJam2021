@@ -20,6 +20,15 @@ func _ready():
 
 
 func _on_Timer_timeout():
+	spawn_entity()
+	
+
+func spawn_entity():
+	$Sprite.show()
+	$Sprite.play("Wind up")
+	yield($Sprite, "animation_finished")
+	$Sprite.play("Fire")
+	
 	if amount == 0:
 		emit_signal("destroyed")
 #		queue_free()
@@ -34,3 +43,22 @@ func _on_Timer_timeout():
 	
 	amount -= 1
 	
+	yield($Sprite, "animation_finished")
+	$Sprite.hide()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
