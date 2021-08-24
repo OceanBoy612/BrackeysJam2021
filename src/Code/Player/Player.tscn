@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Art/Spriteframes/Player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
@@ -10,6 +10,8 @@
 [ext_resource path="res://Art/Spriteframes/Dust_spriteframes.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://Code/Player/GroundDust.gd" type="Script" id=9]
 [ext_resource path="res://Code/Player/WalkLoop.gd" type="Script" id=10]
+[ext_resource path="res://Code/Player/Cursor.gd" type="Script" id=11]
+[ext_resource path="res://Art/Spriteframes/Cursor_spriteframes.tres" type="SpriteFrames" id=12]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.19074, 10.5732 )
@@ -53,3 +55,15 @@ animation = "Idle"
 frame = 5
 playing = true
 script = ExtResource( 9 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Cursor" type="AnimatedSprite" parent="Node"]
+frames = ExtResource( 12 )
+animation = "Idle"
+script = ExtResource( 11 )
+
+[connection signal="charged" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_charged"]
+[connection signal="fired" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_fired"]
+[connection signal="idled" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_idled"]
+[connection signal="wound_up" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_wound_up"]

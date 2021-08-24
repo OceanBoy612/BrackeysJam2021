@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal moved
 signal died
+signal hit
 
 export var speed = 250
 export var health: float = 1.0
@@ -24,6 +25,8 @@ func damage(amt: float):
 	if health <= 0:
 		emit_signal("died")
 		queue_free()
+	else:
+		emit_signal("hit")
 
 
 ### Helper functions ###

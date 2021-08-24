@@ -3,6 +3,11 @@ extends AnimatedSprite
 
 signal shot
 
+signal wound_up
+signal charged
+signal fired
+signal idled
+
 
 var charging = false
 var firing = false
@@ -17,8 +22,10 @@ func windup():
 	got_shoot_signal = false
 	charging = true
 	play("Wind up")
+	emit_signal("wound_up")
 	yield(self, "animation_finished")
 	play("Charging")
+	emit_signal("charged")
 	yield(self, "animation_finished")
 	charging = false
 	
@@ -45,9 +52,11 @@ func release():
 	
 	firing = true
 	play("Fire")
+	emit_signal("fired")
 	emit_signal("shot")
 	yield(self, "animation_finished")
 	play("Idle")
+	emit_signal("idled")
 	charged = false
 	firing = false
 	
