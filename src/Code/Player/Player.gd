@@ -3,6 +3,7 @@ class_name Player
 
 
 signal moved
+signal stopped
 signal shot
 signal picked_up_item
 signal charged
@@ -30,29 +31,25 @@ func _physics_process(_delta):
 	aiming_dir = get_dir_to_mouse()
 	update_aimer_position()
 	
+	var old_move_dir = move_dir
 	move_dir = get_input_dir()
 	var _vel = move_and_slide(move_dir * speed)
 	
-	if move_dir.is_equal_approx(Vector2()):
+	if not move_dir.is_equal_approx(Vector2()):
 		emit_signal("moved")
-		
-	if move_dir == Vector2.ZERO:
-		if $WalkLoop.is_playing() == true:
-			$WalkLoop.stop()
 	else:
-		if $WalkLoop.is_playing() == false:
-			$WalkLoop.play()
-	
+		emit_signal("stopped")
+		
 #	if can_shoot(): # full auto
 #		shoot()
-	
-	update() # debugging
 	
 	if Input.is_action_pressed("ui_accept"):
 		charge_gun()
 	elif Input.is_action_just_released("ui_accept"):
 		shoot_gun()
 	
+	update() # debugging
+
 
 #func _input(event):
 #	if event.is_action_pressed("ui_accept"):
@@ -61,9 +58,13 @@ func _physics_process(_delta):
 #		shoot_gun()
 
 
+
+
+
 func shoot_gun():
 	$Aimer/Blunderbuss.shoot()
-	
+
+
 func charge_gun():
 	emit_signal("charged")
 	$Aimer/Blunderbuss.windup()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/Spriteframes/Player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
@@ -7,6 +7,9 @@
 [ext_resource path="res://Code/Player/Blunderbuss.gd" type="Script" id=5]
 [ext_resource path="res://Audio/SHOOT5_BB_sfx.wav" type="AudioStream" id=6]
 [ext_resource path="res://Audio/FOOTSTEP_LOOP1_BB_sfx.wav" type="AudioStream" id=7]
+[ext_resource path="res://Art/Spriteframes/Dust_spriteframes.tres" type="SpriteFrames" id=8]
+[ext_resource path="res://Code/Player/GroundDust.gd" type="Script" id=9]
+[ext_resource path="res://Code/Player/WalkLoop.gd" type="Script" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.19074, 10.5732 )
@@ -18,20 +21,19 @@ script = ExtResource( 2 )
 speed = 300
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -3.67081 )
+position = Vector2( 0, -3.77593 )
 frames = ExtResource( 1 )
 animation = "Walk"
 script = ExtResource( 3 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 1.75162 )
+position = Vector2( 0, 1.6465 )
 shape = SubResource( 1 )
 
 [node name="Aimer" type="Position2D" parent="."]
-position = Vector2( 1.62408, 0 )
+position = Vector2( 1.624, 0 )
 
 [node name="Blunderbuss" type="AnimatedSprite" parent="Aimer"]
-position = Vector2( -0.62408, 0 )
 frames = ExtResource( 4 )
 animation = "Idle"
 playing = true
@@ -42,3 +44,12 @@ stream = ExtResource( 6 )
 
 [node name="WalkLoop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
+script = ExtResource( 10 )
+
+[node name="GroundDust" type="AnimatedSprite" parent="."]
+position = Vector2( -14.8208, 0.420448 )
+frames = ExtResource( 8 )
+animation = "Idle"
+frame = 5
+playing = true
+script = ExtResource( 9 )
