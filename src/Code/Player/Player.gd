@@ -5,6 +5,7 @@ class_name Player
 signal moved
 signal shot
 signal picked_up_item
+signal charged
 signal shuffled_deck
 
 
@@ -57,6 +58,7 @@ func shoot_gun():
 	$Aimer/Blunderbuss.shoot()
 	
 func charge_gun():
+	emit_signal("charged")
 	$Aimer/Blunderbuss.windup()
 
 

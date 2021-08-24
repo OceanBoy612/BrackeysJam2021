@@ -2,10 +2,12 @@ extends YSort
 
 func _ready():
 	$Player.connect("shot", self, "on_player_shot")
+	$Player.connect("charged", self, "on_player_charged")
 
 
+func on_player_charged():
+	$Camera2D.add_zoom(0.1)
 
 func on_player_shot():
-	print("SHOOT")
-	$Camera2D.add_trauma(0.3)
-	$Camera2D.add_zoom(0.98, 1)
+	$Camera2D.add_trauma(0.2)
+	$Camera2D.add_zoom(0.3)

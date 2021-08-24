@@ -14,16 +14,21 @@ func _process(delta):
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
 		shake()
+	if zooming:
+		zooming = max(zooming - zoom_decay * delta, 0)
+		do_zoom()
 
-func add_zoom(amount, time):
-	$Tween.interpolate_property(self, "zoom", zoom*amount, zoom, time, Tween.TRANS_QUART, Tween.EASE_OUT)
-	$Tween.start()
+var zooming = 0.0
+var max_zoom = 0.2
+var zoom_decay = 0.3
+var zoom_factor = 0.054
 
+func add_zoom(amount):
+	zooming = min(zooming+amount*zoom_factor, max_zoom)
 
-
-
-
-
+func do_zoom():
+	var zoom_amount = 1-zooming
+	zoom = Vector2(zoom_amount, zoom_amount)
 
 """
 
