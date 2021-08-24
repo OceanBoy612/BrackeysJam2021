@@ -10,6 +10,7 @@ export var damage = 1
 export var time_alive: float = 1.0
 export var shot_cone = 0.0 # 0 means perfectly accurate, 30 means bullets can go anywhere in a 30 degree cone
 export var rotate = true
+export var break_sound: AudioStream
 
 
 onready var fragment_tscn = preload("res://Code/Fragmentation/Fragment.tscn")
@@ -59,7 +60,8 @@ func die():
 	
 	var fragment = fragment_tscn.instance()
 	fragment.global_position = global_position
-	fragment.text = $Sprite.texture
+#	fragment.text = $Sprite.texture
+	fragment.init($Sprite.texture, break_sound)
 	get_parent().add_child(fragment)
 	
 	queue_free() 

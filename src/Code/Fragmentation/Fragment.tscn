@@ -106,7 +106,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=2]
 resource_name = "fragment2"
 length = 0.8
 step = 0.2
@@ -246,22 +246,20 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 material = ExtResource( 4 )
-position = Vector2( -9.51181, 4.96063 )
+position = Vector2( -11, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 11, 32 )
 
 [node name="Sprite2" type="Sprite" parent="."]
 material = ExtResource( 4 )
-position = Vector2( -2.08347, -5.95275 )
-rotation = -0.491272
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 11, 0, 11, 32 )
 
 [node name="Sprite3" type="Sprite" parent="."]
 material = ExtResource( 4 )
-position = Vector2( 9.71024, 6.64724 )
+position = Vector2( 11, 0 )
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 22, 0, 11, 32 )
@@ -269,4 +267,6 @@ region_rect = Rect2( 22, 0, 11, 32 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.8
 anims/fragment = SubResource( 1 )
-anims/fragment2 = SubResource( 4 )
+anims/fragment2 = SubResource( 2 )
+
+[node name="BreakSound" type="AudioStreamPlayer2D" parent="."]
