@@ -7,7 +7,8 @@ func _ready():
 
 func on_player_charged():
 	$Camera2D.add_zoom(0.1)
+	$Camera2D.add_trauma(0.016)
 
 func on_player_shot():
 	$Camera2D.add_trauma(0.2)
-	$Camera2D.add_zoom(0.3)
+#	$Camera2D.add_zoom(0.2)

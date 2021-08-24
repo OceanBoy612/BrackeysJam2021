@@ -19,16 +19,17 @@ func _process(delta):
 		do_zoom()
 
 var zooming = 0.0
-var max_zoom = 0.2
-var zoom_decay = 0.3
-var zoom_factor = 0.054
+var zoom_vel = 0.0
+var max_zoom = 0.3
+var zoom_decay = 1.6
+var zoom_factor = 0.28
 
 func add_zoom(amount):
 	zooming = min(zooming+amount*zoom_factor, max_zoom)
 
 func do_zoom():
-	var zoom_amount = 1-zooming
-	zoom = Vector2(zoom_amount, zoom_amount)
+	var amount = 1-pow(zooming, 2)
+	zoom = Vector2(amount, amount)
 
 """
 
@@ -47,7 +48,7 @@ export var decay = 0.8  # How quickly the shaking stops [0, 1].
 export var max_offset = Vector2(100, 75)  # Maximum hor/ver shake in pixels.
 export var max_roll = 0.1  # Maximum rotation in radians (use sparingly).
 export (NodePath) var target  # Assign the node this camera will follow.
-export(float, 0, 1, 0.02) var max_trauma = 1  # max trauma
+export(float, 0, 1, 0.02) var max_trauma = 0.2  # max trauma
 export(bool) var only_x = false setget _set_only_x
 export(bool) var only_y = false setget _set_only_y
 
