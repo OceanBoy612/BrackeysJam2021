@@ -1,13 +1,19 @@
 extends KinematicBody2D
 
 
-signal died
+signal destroyed
 
 
 export var speed = 300
 export var damage = 1
-var rotation_speed = 0
 export var rotate = true
+
+
+onready var fragment_tscn = preload("res://Code/Fragmentation/Fragment.tscn")
+
+
+var rotation_speed = 0
+
 
 func _ready():
 	if rotate:
@@ -23,11 +29,19 @@ func _physics_process(delta):
 		if col.collider.has_method("damage"):
 			col.collider.damage(damage)
 			die()
-		if col.collider is TileMap: # hit a wall
+			return
+		elif col.collider is TileMap: # hit a wall
 			die()
+			return
+
 
 func die():
 	emit_signal("destroyed")
 	set_physics_process(false)
+	
+	var fragment = fragment_tscn.instance()
+	fragment.global_position = global_position
+	fragment.text = $Sprite.texture
+	get_parent().add_child(fragment)
 	
 	queue_free() 
