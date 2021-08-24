@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Art/Spriteframes/Player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Code/Player/WalkLoop.gd" type="Script" id=10]
 [ext_resource path="res://Code/Player/Cursor.gd" type="Script" id=11]
 [ext_resource path="res://Art/Spriteframes/Cursor_spriteframes.tres" type="SpriteFrames" id=12]
+[ext_resource path="res://Code/Player/ShootSound.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.19074, 10.5732 )
@@ -43,6 +44,7 @@ script = ExtResource( 5 )
 
 [node name="ShootSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 6 )
+script = ExtResource( 13 )
 
 [node name="WalkLoop" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 7 )
