@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/CHAIR1_BB_sfx.wav-ac4283e17db9df1ef73af8e7c3c66039.sample"
+
+[deps]
+
+source_file="res://Audio/CHAIR1_BB_sfx.wav"
+dest_files=[ "res://.import/CHAIR1_BB_sfx.wav-ac4283e17db9df1ef73af8e7c3c66039.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
