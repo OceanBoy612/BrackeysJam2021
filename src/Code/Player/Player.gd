@@ -80,14 +80,11 @@ func shoot():
 		shuffle()
 	
 	var current_card_name = draw_pile.pop_front()
-#	print("B")
 	if not current_card_name in Globals.items:
-		print("C")
 		push_error("Card not in Globals! %s" % current_card_name)
 		return
 	
 	# instance from Globals
-#	print("A")
 	var bullet = Globals.items[current_card_name].instance()
 	bullet.position = position
 	bullet.rotate($Aimer.rotation)
@@ -104,6 +101,7 @@ func shuffle():
 	draw_pile = discard_pile
 	draw_pile.shuffle()
 	discard_pile = []
+	$Aimer/Blunderbuss.reload()
 	emit_signal("shuffled_deck")
 
 

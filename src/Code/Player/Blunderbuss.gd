@@ -7,15 +7,19 @@ signal wound_up
 signal charged
 signal fired
 signal idled
+signal reloaded
 
 
 var charging = false
 var firing = false
 var charged = false
 var got_shoot_signal = false
+var reloading = false
 
 
 func windup():
+	if reloading:
+		return
 	if charging or charged:
 		return
 	
@@ -61,3 +65,12 @@ func release():
 	firing = false
 	
 	got_shoot_signal = false
+
+
+func reload():
+	reloading = true
+	play("Reload")
+	yield(self, "animation_finished")
+	emit_signal("reloaded")
+	play("Idle")
+	reloading = false
