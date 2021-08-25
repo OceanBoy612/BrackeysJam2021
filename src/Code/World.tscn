@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Code/World.gd" type="Script" id=3]
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Code/Items/BombItem.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Code/Spawner/Spawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=8]
@@ -63,7 +64,10 @@ script = ExtResource( 2 )
 [node name="Tween" type="Tween" parent="Camera2D"]
 
 [node name="KnifeItem" parent="." instance=ExtResource( 6 )]
-position = Vector2( 132.388, 178.854 )
+position = Vector2( 140.388, 222.854 )
+
+[node name="BombItem" parent="KnifeItem" instance=ExtResource( 5 )]
+position = Vector2( -3.888, -47.854 )
 
 [node name="BroomItem" parent="." instance=ExtResource( 11 )]
 position = Vector2( 228.916, 107.657 )

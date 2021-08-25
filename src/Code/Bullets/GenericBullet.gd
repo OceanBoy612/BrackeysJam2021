@@ -11,6 +11,7 @@ export var time_alive: float = 1.0
 export var shot_cone = 0.0 # 0 means perfectly accurate, 30 means bullets can go anywhere in a 30 degree cone
 export var rotate = true
 export var break_sound: AudioStream
+export var scene_to_spawn: PackedScene
 
 
 onready var fragment_tscn = preload("res://Code/Fragmentation/Fragment.tscn")
@@ -63,6 +64,12 @@ func die():
 #	fragment.text = $Sprite.texture
 	fragment.init($Sprite.texture, break_sound)
 	get_parent().add_child(fragment)
+	
+	if scene_to_spawn:
+		var s = scene_to_spawn.instance()
+		s.global_position = global_position
+		s.init(self)
+		get_parent().add_child(s)
 	
 	queue_free() 
 

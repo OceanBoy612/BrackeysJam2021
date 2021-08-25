@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Code/Entities/BombExplosion.gd" type="Script" id=1]
+[ext_resource path="res://Art/Spriteframes/Bomb_spriteframes.tres" type="SpriteFrames" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.9868
+
+[node name="BombExplosion" type="Area2D"]
+collision_layer = 0
+collision_mask = 12
+script = ExtResource( 1 )
+damage = 3
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = ExtResource( 2 )
+animation = "Idle"
+
+[node name="Shape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_BombExplosion_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]
