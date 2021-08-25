@@ -17,6 +17,7 @@ signal landed
 
 
 export var charge_speed_multiplier: float = 3.0
+export(float, 0.7, 1.0, 0.01) var landing_speed_decay: float = 0.9
 #export(String, "clockwise", "counter_clockwise", "random") var strafe_dir = "random" # not implemented
 
 
@@ -50,6 +51,7 @@ func enemy_process(delta):
 
 
 func landing():
+	move_dir *= 0.9
 	var _vel = move_and_slide(move_dir * speed)
 	emit_signal("moved")
 	pass
