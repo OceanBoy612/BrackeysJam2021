@@ -6,6 +6,7 @@ signal hit
 
 export var speed = 250
 export var health: float = 1.0
+export var damage: float = 1.0
 var move_dir = Vector2(1,0)
 
 func _physics_process(delta):
@@ -32,3 +33,9 @@ func damage(amt: float):
 ### Helper functions ###
 func get_dir_to_player() -> Vector2:
 	return (Globals.player.global_position - global_position).normalized()
+
+
+func move_to_ghost_layer(toggle: bool=true):
+	call_deferred("set_collision_layer_bit", 3, toggle) 
+	call_deferred("set_collision_layer_bit", 2, !toggle) 
+	call_deferred("set_collision_mask_bit", 2, !toggle)

@@ -137,5 +137,7 @@ func _draw():
 	draw_line(Vector2(), aiming_dir * 100, Color("#00ff00"), 1.5)
 
 
+func damage(amt: float):
+	pass
 
 

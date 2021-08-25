@@ -159,12 +159,12 @@ animations = [ {
 "frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ) ],
 "loop": true,
 "name": "Land",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [ SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": true,
 "name": "Charge",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [ SubResource( 28 ), SubResource( 29 ) ],
 "loop": true,

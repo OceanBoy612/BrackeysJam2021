@@ -43,8 +43,8 @@ func shoot():
 	got_shoot_signal = true
 	if not charging and charged:
 		release()
-	else:
-		push_error("WHAT?")
+#	else:
+#		push_error("WHAT?")
 
 
 func release():

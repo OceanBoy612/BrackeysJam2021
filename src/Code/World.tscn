@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Code/World.gd" type="Script" id=3]
+[ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Code/Spawner/Spawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=8]
@@ -41,8 +42,8 @@ position = Vector2( 93.6252, 54.7231 )
 
 [node name="Spawner" parent="Spawners" instance=ExtResource( 7 )]
 position = Vector2( 397.89, 154.368 )
+entity_tscn = ExtResource( 4 )
 amount = -1
-delay = 3.5
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource( 7 )]
 position = Vector2( 396.016, 32.4518 )
