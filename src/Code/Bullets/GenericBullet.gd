@@ -68,7 +68,8 @@ func die():
 	if scene_to_spawn:
 		var s = scene_to_spawn.instance()
 		s.global_position = global_position
-		s.init(self)
+		if s.has_method("init"):
+			s.init(self)
 		get_parent().add_child(s)
 	
 	queue_free() 

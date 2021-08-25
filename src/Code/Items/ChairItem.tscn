@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Art/Pngs/Bullets/Chair.png" type="Texture" id=1]
 [ext_resource path="res://Code/Items/GenericItem.tscn" type="PackedScene" id=2]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.3242, 14.7142 )
+
 [node name="ChairItem" instance=ExtResource( 2 )]
 item_name = "chair"
+
+[node name="Shape" parent="." index="0"]
+shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 1 )

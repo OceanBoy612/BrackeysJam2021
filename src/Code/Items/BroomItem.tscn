@@ -1,10 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Code/Items/GenericItem.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/Pngs/Bullets/Broom.png" type="Texture" id=2]
 
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 15.1526, 2.69341 )
+
 [node name="BroomItem" instance=ExtResource( 1 )]
 item_name = "broom"
+
+[node name="Shape" parent="." index="0"]
+shape = SubResource( 1 )
 
 [node name="Sprite" parent="." index="1"]
 texture = ExtResource( 2 )

@@ -9,6 +9,7 @@ onready var items = {
 	"lamp": preload("res://Code/Bullets/LampBullet.tscn"),
 	"chair": preload("res://Code/Bullets/ChairBullet.tscn"),
 	"bomb": preload("res://Code/Bullets/BombBullet.tscn"),
+	"hedgehog": preload("res://Code/Bullets/HedgeHogBullet.tscn"),
 }
 
 func _ready():
