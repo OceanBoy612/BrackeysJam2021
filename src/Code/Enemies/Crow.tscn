@@ -13,11 +13,12 @@ speed = 69
 charge_speed_multiplier = 4.598
 
 [node name="Sprite" parent="." index="0"]
+position = Vector2( 0, -16.4402 )
 frames = ExtResource( 3 )
 animation = "Charge"
-script = null
 
 [node name="Shape" parent="." index="1"]
+position = Vector2( 0, -15.026 )
 shape = SubResource( 1 )
 
 [node name="WanderTimer" type="Timer" parent="." index="4"]

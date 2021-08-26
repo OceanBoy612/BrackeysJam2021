@@ -1,15 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Art/Spriteframes/Pumpkiller_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Enemies/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://Code/Enemies/Sprite.gd" type="Script" id=3]
 [ext_resource path="res://Art/Spriteframes/Hit_spriteframes.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Code/Enemies/DamageExplosion.gd" type="Script" id=5]
 [ext_resource path="res://Code/Enemies/DeathExplosion.gd" type="Script" id=6]
 [ext_resource path="res://Art/Spriteframes/Simple_explosion_spriteframes.tres" type="SpriteFrames" id=7]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10.1946, 14.9538 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
@@ -18,14 +13,10 @@ script = ExtResource( 2 )
 speed = 100
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -15.9099 )
-frames = ExtResource( 1 )
-animation = "Walk"
-script = ExtResource( 3 )
+position = Vector2( 0, -15.7331 )
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -15.9099 )
-shape = SubResource( 1 )
 
 [node name="HitExplosion" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -14.8492 )
