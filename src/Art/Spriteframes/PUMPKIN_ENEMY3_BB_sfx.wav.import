@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PUMPKIN_ENEMY3_BB_sfx.wav-e92bf2798024f5b28d1cb6b66938eb0a.sample"
+
+[deps]
+
+source_file="res://Art/Spriteframes/PUMPKIN_ENEMY3_BB_sfx.wav"
+dest_files=[ "res://.import/PUMPKIN_ENEMY3_BB_sfx.wav-e92bf2798024f5b28d1cb6b66938eb0a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
