@@ -27,5 +27,5 @@ func _ready():
 
 
 func _on_parent_sprite_animation_changed():
-	if parent_sprite.frame == frame:
+	if parent_sprite.animation == animation_name and parent_sprite.frame == frame:
 		play()
