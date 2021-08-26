@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Code/Items/ChairItem.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Code/Items/BroomItem.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Code/Items/HedgeHogItem.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Code/Enemies/Pumpkin.tscn" type="PackedScene" id=13]
 
 [node name="World" type="YSort"]
 script = ExtResource( 3 )
@@ -49,6 +50,7 @@ amount = -1
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource( 7 )]
 position = Vector2( 396.016, 32.4518 )
+entity_tscn = ExtResource( 13 )
 amount = -1
 delay = 3.772
 
