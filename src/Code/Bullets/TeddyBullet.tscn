@@ -7,6 +7,8 @@
 radius = 7.65156
 
 [node name="TeddyBullet" instance=ExtResource( 2 )]
+damage = 3
+shot_cone = 20.0
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

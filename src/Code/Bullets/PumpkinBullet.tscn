@@ -7,6 +7,9 @@
 radius = 8.35945
 
 [node name="PumpkinBullet" instance=ExtResource( 2 )]
+speed = 250.0
+damage = 6
+shot_cone = 30.0
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

@@ -7,6 +7,10 @@
 radius = 6.29935
 
 [node name="TeapotBullet" instance=ExtResource( 2 )]
+speed = 450.0
+damage = 4
+time_alive = 0.7
+shot_cone = 20.0
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

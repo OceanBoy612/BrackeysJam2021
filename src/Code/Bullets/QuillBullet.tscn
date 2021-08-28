@@ -7,6 +7,10 @@
 extents = Vector2( 6.94348, 2.40948 )
 
 [node name="QuillBullet" instance=ExtResource( 2 )]
+speed = 250.0
+damage = 3
+time_alive = 3.0
+rotate = false
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )
