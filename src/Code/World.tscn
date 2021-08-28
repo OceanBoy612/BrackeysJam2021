@@ -55,12 +55,13 @@ position = Vector2( 93.6252, 54.7231 )
 position = Vector2( 397.89, 154.368 )
 entity_tscn = ExtResource( 4 )
 amount = -1
+delay = 11.0
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource( 7 )]
 position = Vector2( 396.016, 32.4518 )
 entity_tscn = ExtResource( 13 )
 amount = -1
-delay = 3.772
+delay = 2.0
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 130.493, 168.055 )

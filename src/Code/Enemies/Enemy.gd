@@ -34,6 +34,7 @@ func damage(amt: float):
 	$Healthbar.show()
 	if health <= 0:
 		emit_signal("died")
+		set_physics_process(false)
 		yield($Sprite, "animation_finished")
 		queue_free()
 	else:
@@ -49,3 +50,6 @@ func move_to_ghost_layer(toggle: bool=true):
 	call_deferred("set_collision_layer_bit", 3, toggle) 
 	call_deferred("set_collision_layer_bit", 2, !toggle) 
 	call_deferred("set_collision_mask_bit", 2, !toggle)
+
+func get_distance_to_player() -> float:
+	return Globals.player.global_position.distance_to(global_position)

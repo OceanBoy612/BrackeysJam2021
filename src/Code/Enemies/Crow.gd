@@ -104,7 +104,7 @@ func set_state(new_state):
 	match new_state:
 		CHARGING:
 			move_dir = get_dir_to_player()
-			distance_to_travel = Globals.player.global_position.distance_to(global_position)
+			distance_to_travel = get_distance_to_player()
 			distance_traveled = 0
 			$Sprite.play("Air")
 			$Sprite.rotation = move_dir.angle() # rotate the sprite in the direction of movement

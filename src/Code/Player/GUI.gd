@@ -14,13 +14,13 @@ func on_player_hit():
 	for i in range($HBoxContainer.get_child_count()):
 		var lifeicon = $HBoxContainer.get_child(i)
 		var sprite = lifeicon.get_child(0) as AnimatedSprite
-		if i+1 < player.health:
+		if i < player.health:
 			match sprite.animation:
 				"Idle":
 					pass # do nothing
 				"Idle off":
 					heal(sprite)
-		elif i+1 >= player.health:
+		elif i >= player.health:
 			match sprite.animation:
 				"Idle":
 					hurt(sprite)
