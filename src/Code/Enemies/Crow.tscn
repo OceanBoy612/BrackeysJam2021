@@ -10,6 +10,7 @@ extents = Vector2( 10.1946, 14.9538 )
 [node name="Crow" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 speed = 69
+health = 3.0
 charge_speed_multiplier = 4.598
 
 [node name="Sprite" parent="." index="0"]

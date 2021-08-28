@@ -9,6 +9,13 @@ export var health: float = 1.0
 export var damage: float = 1.0
 var move_dir = Vector2(1,0)
 
+
+func _ready():
+	$Healthbar.max_value = health
+	$Healthbar.value = health
+	$Healthbar.hide()
+
+
 func _physics_process(delta):
 	if not Globals.player:
 		return
@@ -23,6 +30,8 @@ func enemy_process(_delta):
 
 func damage(amt: float):
 	health -= amt
+	$Healthbar.value = health
+	$Healthbar.show()
 	if health <= 0:
 		emit_signal("died")
 		queue_free()
