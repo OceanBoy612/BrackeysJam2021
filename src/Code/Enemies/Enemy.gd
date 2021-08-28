@@ -25,6 +25,7 @@ func damage(amt: float):
 	health -= amt
 	if health <= 0:
 		emit_signal("died")
+		yield($Sprite, "animation_finished")
 		queue_free()
 	else:
 		emit_signal("hit")
