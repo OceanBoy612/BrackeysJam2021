@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Code/Bullets/GenericBullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Code/Enemies/HedgeHog.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Pngs/Bullets/Hedgehog.png" type="Texture" id=3]
+[ext_resource path="res://Audio/HEDGE1_BB_sfx.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 6.94423
@@ -10,6 +11,7 @@ radius = 6.94423
 [node name="HedgeHogBullet" instance=ExtResource( 1 )]
 speed = 200.0
 shot_cone = 60.0
+break_sound = ExtResource( 4 )
 scene_to_spawn = ExtResource( 2 )
 
 [node name="Shape" parent="." index="0"]
