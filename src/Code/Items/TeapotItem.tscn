@@ -7,6 +7,7 @@
 radius = 6.66874
 
 [node name="TeapotItem" instance=ExtResource( 2 )]
+item_name = "teapot"
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )
