@@ -14,6 +14,14 @@ func _ready():
 	$Healthbar.max_value = health
 	$Healthbar.value = health
 	$Healthbar.hide()
+	
+	$Node/locator.global_position = global_position
+	var spawnsprite = $Node/locator/SpawnSprite
+	spawnsprite.show()
+	spawnsprite.play("Wind up")
+	yield(spawnsprite, "animation_finished")
+	spawnsprite.play("Fire")
+	
 
 
 func _physics_process(delta):

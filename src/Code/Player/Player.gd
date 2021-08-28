@@ -153,7 +153,7 @@ func damage(amt: float):
 	health -= amt
 #	print("player health", health)
 	$Healthbar.value = health
-	$Healthbar.show()
+#	$Healthbar.show()
 	if health <= 0:
 		emit_signal("died")
 	else:

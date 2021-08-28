@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
+[ext_resource path="res://Art/Spriteframes/Spawn_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Enemies/Enemy.gd" type="Script" id=2]
 [ext_resource path="res://Art/Spriteframes/Hit_spriteframes.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Code/Enemies/DamageExplosion.gd" type="Script" id=5]
@@ -45,3 +46,12 @@ __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
+
+[node name="Node" type="Node" parent="."]
+
+[node name="locator" type="Node2D" parent="Node"]
+
+[node name="SpawnSprite" type="AnimatedSprite" parent="Node/locator"]
+position = Vector2( 0, -14.6725 )
+frames = ExtResource( 1 )
+animation = "Wind up"

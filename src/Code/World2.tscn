@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Code/World2.gd" type="Script" id=7]
 [ext_resource path="res://Code/Spawner/WaveSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Code/Enemies/Pumpkin.tscn" type="PackedScene" id=10]
 
 [node name="World" type="YSort"]
 script = ExtResource( 7 )
@@ -60,7 +61,7 @@ position = Vector2( -57.1464, 54.7653 )
 
 [node name="WaveSpawner2" parent="Spawners" instance=ExtResource( 8 )]
 position = Vector2( 154.375, -206.723 )
-enemy_tscn = ExtResource( 9 )
+enemy_tscn = ExtResource( 10 )
 min_enemies = 1
 max_enemies = 2
 waves = 1
