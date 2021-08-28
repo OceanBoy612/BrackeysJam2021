@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Code/Fence/Fence.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=5]
+[ext_resource path="res://Code/Fence/FenceSide.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Code/World2.gd" type="Script" id=7]
 [ext_resource path="res://Code/Spawner/WaveSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=9]
@@ -24,6 +26,7 @@ cell_size = Vector2( 16, 16 )
 cell_y_sort = true
 show_collision = true
 format = 1
+tile_data = PoolIntArray( 131084, 536870925, 0 )
 
 [node name="Front" type="TileMap" parent="."]
 tile_set = ExtResource( 4 )
@@ -39,6 +42,9 @@ position = Vector2( 93.6252, 54.7231 )
 [node name="WaveSpawner" parent="Spawners" instance=ExtResource( 8 )]
 position = Vector2( 662.74, 94.4503 )
 enemy_tscn = ExtResource( 9 )
+min_enemies = 1
+max_enemies = 2
+waves = 1
 
 [node name="Position2D" type="Position2D" parent="Spawners/WaveSpawner"]
 position = Vector2( -57.9401, -47.622 )
@@ -50,6 +56,25 @@ position = Vector2( 50.7968, -49.2094 )
 position = Vector2( 51.5905, 49.2094 )
 
 [node name="Position2D4" type="Position2D" parent="Spawners/WaveSpawner"]
+position = Vector2( -57.1464, 54.7653 )
+
+[node name="WaveSpawner2" parent="Spawners" instance=ExtResource( 8 )]
+position = Vector2( 154.375, -206.723 )
+enemy_tscn = ExtResource( 9 )
+min_enemies = 1
+max_enemies = 2
+waves = 1
+
+[node name="Position2D" type="Position2D" parent="Spawners/WaveSpawner2"]
+position = Vector2( -57.9401, -47.622 )
+
+[node name="Position2D2" type="Position2D" parent="Spawners/WaveSpawner2"]
+position = Vector2( 50.7968, -49.2094 )
+
+[node name="Position2D3" type="Position2D" parent="Spawners/WaveSpawner2"]
+position = Vector2( 51.5905, 49.2094 )
+
+[node name="Position2D4" type="Position2D" parent="Spawners/WaveSpawner2"]
 position = Vector2( -57.1464, 54.7653 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -69,3 +94,9 @@ position = Vector2( 171.089, 172.798 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.647059, 0.592157, 0.694118, 1 )
+
+[node name="Fence2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 576, 144 )
+
+[node name="Fence" parent="." instance=ExtResource( 3 )]
+position = Vector2( 256, 0 )

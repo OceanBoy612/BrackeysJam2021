@@ -3,11 +3,17 @@ extends "res://Code/World.gd"
 
 onready var width = ProjectSettings.get_setting("display/window/size/width")
 onready var height = ProjectSettings.get_setting("display/window/size/height")
-
+var cell_size = 16
 
 func _ready():
 	player.connect("screen_exited", self, "on_screen_exited")
+	for spawner in $Spawners.get_children():
+		spawner.connect("all_enemies_killed", self, "on_all_enemies_killed")
 	on_screen_exited()
+
+
+func on_all_enemies_killed():
+	get_tree().call_group("fences", "open")
 
 
 func on_screen_exited():
@@ -18,18 +24,24 @@ func on_screen_exited():
 	# enable the spawners in that 'room'
 	yield(get_tree().create_timer(0.2), "timeout")
 	get_tree().call_group("wave_spawners", "spawn_wave")
+	yield(get_tree().create_timer(0.1), "timeout")
+	if get_tree().get_nodes_in_group("spawned_enemies").size() > 0:
+		get_tree().call_group("fences", "close")
+	else:
+		get_tree().call_group("fences", "open")
+		
 
 
 func move_camera(side: String):
 	match side:
 		"right":
-			cam.position.x += width
+			cam.position.x += width - cell_size
 		"left":
-			cam.position.x -= width
+			cam.position.x -= width - cell_size
 		"bot":
-			cam.position.y += height
+			cam.position.y += height - cell_size
 		"top":
-			cam.position.y -= height
+			cam.position.y -= height - cell_size
 		_:
 			push_warning("No side found, not moving camera")
 

@@ -2,10 +2,15 @@ tool
 extends Node2D
 
 
+signal all_enemies_killed
+
+
 export var enemy_tscn: PackedScene
 export var min_enemies = 3
 export var max_enemies = 4
 export var waves = 3
+
+var enemies_spawned = 0
 
 
 func _ready():
@@ -33,7 +38,19 @@ func spawn_wave():
 		enemy.global_position = pos
 		enemy.set_as_toplevel(true)
 		add_child(enemy)
+		enemy.add_to_group("spawned_enemies")
+		enemy.connect("died", self, "on_spawned_enemy_died")
+		enemies_spawned += 1
 	waves -= 1
+
+
+func on_spawned_enemy_died():
+	enemies_spawned -= 1
+	if enemies_spawned <= 0:
+		if waves <= 0:
+			emit_signal("all_enemies_killed")
+		else:
+			spawn_wave()
 
 
 func get_spawn_positions() -> Array:
