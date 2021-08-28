@@ -1,19 +1,29 @@
 extends YSort
 
+
+onready var player: Player = $Player
+onready var cam: Camera2D = $Camera2D
+
+
 func _ready():
-	$Player.connect("shot", self, "on_player_shot")
-	$Player.connect("charged", self, "on_player_charged")
-	$Player.connect("moved", self, "on_player_moved")
+	player.connect("shot", self, "on_player_shot")
+	player.connect("charged", self, "on_player_charged")
+	player.connect("moved", self, "on_player_moved")
+	player.connect("died", self, "on_player_died")
 
 
 func on_player_charged():
-	$Camera2D.add_zoom(0.105)
-	$Camera2D.add_trauma(0.016, 0.15)
+	cam.add_zoom(0.105)
+	cam.add_trauma(0.016, 0.15)
 
 func on_player_shot():
-	$Camera2D.add_trauma(0.3)
-#	$Camera2D.add_zoom(0.2)
+	cam.add_trauma(0.3)
+#	cam.add_zoom(0.2)
 
 func on_player_moved():
-#	$Camera2D.add_zoom(0.10)
-	$Camera2D.add_trauma(0.016, 0.1)
+#	cam.add_zoom(0.10)
+	cam.add_trauma(0.016, 0.1)
+
+
+func on_player_died():
+	get_tree().reload_current_scene()

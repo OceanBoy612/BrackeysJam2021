@@ -8,6 +8,10 @@ signal shot
 signal picked_up_item
 signal charged
 signal shuffled_deck
+signal died
+signal hit
+
+signal screen_exited
 
 
 export var speed: int = 100
@@ -21,10 +25,18 @@ var move_dir = Vector2(0,0)
 var draw_pile = [] # Array of Strings - use Globals to access and load
 var discard_pile = []
 
+export var max_health: float = 1.0
+onready var health: float = max_health
+
+
 
 func _ready():
 	Globals.player = self
 	$Aimer/Blunderbuss.connect("shot", self, "shoot")
+	
+	$Healthbar.max_value = max_health
+	$Healthbar.value = health
+#	$Healthbar.hide()
 
 
 func _physics_process(_delta):
@@ -48,7 +60,7 @@ func _physics_process(_delta):
 	elif Input.is_action_just_released("shoot"):
 		shoot_gun()
 	
-	update() # debugging
+#	update() # debugging
 
 
 #func _input(event):
@@ -133,11 +145,19 @@ func pickup_item(item: String):
 	emit_signal("picked_up_item")
 
 
-func _draw():
-	draw_line(Vector2(), aiming_dir * 100, Color("#00ff00"), 1.5)
+#func _draw():
+#	draw_line(Vector2(), aiming_dir * 100, Color("#00ff00"), 1.5)
 
 
 func damage(amt: float):
-	pass
+	health -= amt
+	$Healthbar.value = health
+	$Healthbar.show()
+	if health <= 0:
+		emit_signal("died")
+	else:
+		emit_signal("hit")
 
 
+func _on_VisibilityNotifier2D_screen_exited():
+	emit_signal("screen_exited")

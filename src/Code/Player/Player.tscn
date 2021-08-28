@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Art/Spriteframes/Player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
@@ -13,6 +13,9 @@
 [ext_resource path="res://Code/Player/Cursor.gd" type="Script" id=11]
 [ext_resource path="res://Art/Spriteframes/Cursor_spriteframes.tres" type="SpriteFrames" id=12]
 [ext_resource path="res://Code/Player/ShootSound.gd" type="Script" id=13]
+[ext_resource path="res://Art/Spriteframes/Head_spriteframes.tres" type="SpriteFrames" id=14]
+[ext_resource path="res://Code/Player/GUI.gd" type="Script" id=15]
+[ext_resource path="res://Art/Pngs/light_circle.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.19074, 10.5732 )
@@ -22,6 +25,7 @@ collision_layer = 2
 collision_mask = 5
 script = ExtResource( 2 )
 speed = 300
+max_health = 5.0
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0, -3.77593 )
@@ -65,7 +69,110 @@ frames = ExtResource( 12 )
 animation = "Idle"
 script = ExtResource( 11 )
 
+[node name="Healthbar" type="ProgressBar" parent="."]
+visible = false
+margin_left = -12.0
+margin_top = -25.0
+margin_right = 35.0
+margin_bottom = -18.0
+rect_scale = Vector2( 0.5, 0.5 )
+max_value = 10.0
+value = 10.0
+percent_visible = false
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" type="Control" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GUI"]
+margin_right = 124.0
+margin_bottom = 32.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lifeicon" type="Control" parent="CanvasLayer/GUI/HBoxContainer"]
+margin_right = 28.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 28, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/GUI/HBoxContainer/Lifeicon"]
+frames = ExtResource( 14 )
+animation = "Idle"
+centered = false
+
+[node name="Lifeicon2" type="Control" parent="CanvasLayer/GUI/HBoxContainer"]
+margin_left = 32.0
+margin_right = 60.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 28, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/GUI/HBoxContainer/Lifeicon2"]
+frames = ExtResource( 14 )
+animation = "Idle"
+centered = false
+
+[node name="Lifeicon3" type="Control" parent="CanvasLayer/GUI/HBoxContainer"]
+margin_left = 64.0
+margin_right = 92.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 28, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/GUI/HBoxContainer/Lifeicon3"]
+frames = ExtResource( 14 )
+animation = "Idle"
+centered = false
+
+[node name="Lifeicon4" type="Control" parent="CanvasLayer/GUI/HBoxContainer"]
+margin_left = 96.0
+margin_right = 124.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 28, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/GUI/HBoxContainer/Lifeicon4"]
+frames = ExtResource( 14 )
+animation = "Idle"
+centered = false
+
+[node name="Lifeicon5" type="Control" parent="CanvasLayer/GUI/HBoxContainer"]
+margin_left = 128.0
+margin_right = 156.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 28, 32 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="CanvasLayer/GUI/HBoxContainer/Lifeicon5"]
+frames = ExtResource( 14 )
+animation = "Idle"
+centered = false
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 16 )
+energy = 0.7
+
 [connection signal="charged" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_charged"]
 [connection signal="fired" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_fired"]
 [connection signal="idled" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_idled"]
 [connection signal="wound_up" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_wound_up"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
