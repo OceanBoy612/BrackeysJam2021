@@ -6,7 +6,9 @@
 
 [node name="KnifeBullet" instance=ExtResource( 1 )]
 speed = 600.0
+damage = 3
 time_alive = 3.0
+shot_cone = 15.0
 break_sound = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="1"]

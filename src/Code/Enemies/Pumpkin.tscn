@@ -11,6 +11,7 @@
 extents = Vector2( 10.2029, 14.5375 )
 
 [node name="Pumpkin" instance=ExtResource( 1 )]
+health = 10.0
 
 [node name="Sprite" parent="." index="0"]
 frames = ExtResource( 2 )

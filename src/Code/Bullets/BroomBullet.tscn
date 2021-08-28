@@ -5,7 +5,8 @@
 [ext_resource path="res://Audio/BROOM1_BB_sfx.wav" type="AudioStream" id=3]
 
 [node name="BroomBullet" instance=ExtResource( 2 )]
-damage = 3
+speed = 400.0
+damage = 4
 rotate = false
 break_sound = ExtResource( 3 )
 

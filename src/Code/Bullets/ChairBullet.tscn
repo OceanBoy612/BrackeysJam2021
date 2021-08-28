@@ -5,7 +5,7 @@
 [ext_resource path="res://Audio/CHAIR1_BB_sfx.wav" type="AudioStream" id=3]
 
 [node name="ChairBullet" instance=ExtResource( 1 )]
-damage = 5
+damage = 10
 time_alive = 0.8
 shot_cone = 30.0
 break_sound = ExtResource( 3 )

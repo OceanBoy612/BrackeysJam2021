@@ -5,7 +5,8 @@
 [ext_resource path="res://Audio/LAMP1_BB_sfx.wav" type="AudioStream" id=3]
 
 [node name="LampBullet" instance=ExtResource( 2 )]
-damage = 2
+damage = 4
+time_alive = 0.8
 shot_cone = 20.0
 break_sound = ExtResource( 3 )
 
