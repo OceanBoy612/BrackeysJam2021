@@ -169,7 +169,9 @@ centered = false
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 16 )
-energy = 0.7
+texture_scale = 0.6
+color = Color( 0.741176, 0.662745, 0.470588, 1 )
+energy = 0.8
 
 [connection signal="charged" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_charged"]
 [connection signal="fired" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_fired"]

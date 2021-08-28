@@ -91,3 +91,7 @@ position = Vector2( 217.792, 220.489 )
 
 [node name="LampItem" parent="." instance=ExtResource( 9 )]
 position = Vector2( 375.122, 183.408 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 375.122, 183.408 )
+color = Color( 0.647059, 0.592157, 0.694118, 1 )
