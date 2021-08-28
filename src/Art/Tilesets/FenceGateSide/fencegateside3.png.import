@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/fencegate1.png-cf6b8f5f2b2ffe772938e3e9034d12e4.stex"
+path="res://.import/fencegateside3.png-2b15a3c370685d2376e39df8ab093695.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Tilesets/Fence Gate/fencegate1.png"
-dest_files=[ "res://.import/fencegate1.png-cf6b8f5f2b2ffe772938e3e9034d12e4.stex" ]
+source_file="res://Art/Tilesets/FenceGateSide/fencegateside3.png"
+dest_files=[ "res://.import/fencegateside3.png-2b15a3c370685d2376e39df8ab093695.stex" ]
 
 [params]
 
