@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Code/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Code/Enemies/Avatar.gd" type="Script" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://Code/Enemies/Sprite2.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -32,6 +33,7 @@ shape = SubResource( 1 )
 [node name="Sprite2" type="Sprite" parent="." index="6"]
 position = Vector2( -4.37029, -15.7253 )
 texture = ExtResource( 3 )
+script = ExtResource( 4 )
 __meta__ = {
 "_editor_description_": ""
 }

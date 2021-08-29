@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -28,6 +28,11 @@
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Art/Pngs/thanks4playing.png" type="Texture" id=27]
 [ext_resource path="res://Code/Enemies/Avatar.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Art/Pngs/Pal.png" type="Texture" id=29]
+[ext_resource path="res://Art/Pngs/Pal3.png" type="Texture" id=30]
+[ext_resource path="res://Art/Pngs/Pal2.png" type="Texture" id=31]
+[ext_resource path="res://Art/Pngs/Pal5.png" type="Texture" id=32]
+[ext_resource path="res://Art/Pngs/Pal4.png" type="Texture" id=33]
 
 [node name="World" type="YSort"]
 script = ExtResource( 23 )
@@ -259,14 +264,35 @@ position = Vector2( 1392, 1040 )
 [node name="Avatar" parent="Node2D" instance=ExtResource( 28 )]
 position = Vector2( 168, 24 )
 
+[node name="Sprite2" parent="Node2D/Avatar" index="6"]
+texture = ExtResource( 29 )
+
 [node name="Avatar2" parent="Node2D" instance=ExtResource( 28 )]
 position = Vector2( 88, -48 )
+
+[node name="Sprite2" parent="Node2D/Avatar2" index="6"]
+texture = ExtResource( 31 )
 
 [node name="Avatar3" parent="Node2D" instance=ExtResource( 28 )]
 position = Vector2( -88, -56 )
 
+[node name="Sprite2" parent="Node2D/Avatar3" index="6"]
+texture = ExtResource( 30 )
+
 [node name="Avatar4" parent="Node2D" instance=ExtResource( 28 )]
 position = Vector2( 0, -64 )
 
+[node name="Sprite2" parent="Node2D/Avatar4" index="6"]
+texture = ExtResource( 33 )
+
 [node name="Avatar5" parent="Node2D" instance=ExtResource( 28 )]
-position = Vector2( -192, 16 )
+position = Vector2( -176, 0 )
+
+[node name="Sprite2" parent="Node2D/Avatar5" index="6"]
+texture = ExtResource( 32 )
+
+[editable path="Node2D/Avatar"]
+[editable path="Node2D/Avatar2"]
+[editable path="Node2D/Avatar3"]
+[editable path="Node2D/Avatar4"]
+[editable path="Node2D/Avatar5"]
