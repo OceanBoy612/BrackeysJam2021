@@ -18,7 +18,7 @@ func on_player_charged():
 	cam.add_trauma(0.016, 0.15)
 
 func on_player_shot():
-	cam.add_trauma(0.3)
+	cam.add_trauma(0.3, 0.55)
 #	cam.add_zoom(0.2)
 
 func on_player_hit():
