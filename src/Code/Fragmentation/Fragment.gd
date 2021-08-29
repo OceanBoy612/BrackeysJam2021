@@ -12,6 +12,7 @@ func _ready():
 	$BreakSound.play()
 	$AnimationPlayer.play("fragment2")
 	yield($BreakSound, "finished")
+	yield(get_tree().create_timer(5), "timeout")
 	queue_free()
 
 
