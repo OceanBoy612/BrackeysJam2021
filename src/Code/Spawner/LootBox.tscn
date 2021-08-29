@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://LootBox.gd" type="Script" id=1]
-[ext_resource path="res://Code/Items/QuillItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Code/Spawner/LootBox.gd" type="Script" id=1]
+[ext_resource path="res://Code/Items/FlowerItem.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Code/Items/ChairItem.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Code/Items/TeddyItem.tscn" type="PackedScene" id=5]
@@ -22,3 +22,7 @@ item6 = ExtResource( 6 )
 item7 = ExtResource( 2 )
 item8 = ExtResource( 5 )
 item9 = ExtResource( 7 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 0, 14 )
+scale = Vector2( 1, 0.563458 )

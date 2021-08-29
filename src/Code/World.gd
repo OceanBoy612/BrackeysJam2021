@@ -10,6 +10,7 @@ func _ready():
 	player.connect("charged", self, "on_player_charged")
 	player.connect("moved", self, "on_player_moved")
 	player.connect("died", self, "on_player_died")
+	player.connect("hit", self, "on_player_hit")
 
 
 func on_player_charged():
@@ -20,10 +21,8 @@ func on_player_shot():
 	cam.add_trauma(0.3)
 #	cam.add_zoom(0.2)
 
-func on_player_moved():
-#	cam.add_zoom(0.10)
-#	cam.add_trauma(0.016, 0.1)
-	pass
+func on_player_hit():
+	cam.add_trauma(0.5, 0.5)
 
 
 func on_player_died():
