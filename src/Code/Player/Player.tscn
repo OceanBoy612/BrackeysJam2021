@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Art/Spriteframes/Player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
@@ -22,6 +22,8 @@
 [ext_resource path="res://Audio/GunAudio/GUN_CHARGE2_BB_sfx.wav" type="AudioStream" id=20]
 [ext_resource path="res://Code/Player/ChargeSound.gd" type="Script" id=21]
 [ext_resource path="res://Audio/PlayerAudio/PLAYER_DAMAGE1_sfx.wav" type="AudioStream" id=22]
+[ext_resource path="res://Art/Pngs/Frame.png" type="Texture" id=23]
+[ext_resource path="res://Art/Pngs/Bullets/Knife.png" type="Texture" id=24]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.19074, 10.5732 )
@@ -106,16 +108,16 @@ __meta__ = {
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="GUI" type="Control" parent="CanvasLayer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="GUI" type="VBoxContainer" parent="CanvasLayer"]
+margin_right = 156.0
+margin_bottom = 88.0
 script = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GUI"]
-margin_right = 124.0
+margin_right = 156.0
 margin_bottom = 32.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -184,6 +186,22 @@ size_flags_vertical = 3
 frames = ExtResource( 14 )
 animation = "Idle"
 centered = false
+
+[node name="Control" type="Control" parent="CanvasLayer/GUI"]
+margin_top = 36.0
+margin_right = 156.0
+margin_bottom = 46.0
+rect_min_size = Vector2( 0, 10 )
+
+[node name="NextBullet" type="TextureRect" parent="CanvasLayer/GUI"]
+margin_top = 50.0
+margin_right = 156.0
+margin_bottom = 98.0
+texture = ExtResource( 23 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/GUI/NextBullet"]
+position = Vector2( 23.6088, 23.6088 )
+texture = ExtResource( 24 )
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 

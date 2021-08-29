@@ -172,7 +172,6 @@ position = Vector2( 160, 48 )
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 247.945, 59.1055 )
 speed = 225
-shot_accuracy = 50
 reload_time_msecs = 100
 
 [node name="Controls" type="Sprite" parent="."]

@@ -2,6 +2,7 @@ extends AnimatedSprite
 
 
 signal shot
+signal charged_shot
 
 signal wound_up
 signal charged
@@ -61,10 +62,10 @@ func release(triple:bool=false):
 	firing = true
 	play("Fire")
 	emit_signal("fired")
-	emit_signal("shot") # here we shoot the bullets
 	if triple:
-		emit_signal("shot") 
-		emit_signal("shot") 
+		emit_signal("charged_shot") 
+	else:
+		emit_signal("shot") # here we shoot the bullets
 	yield(self, "animation_finished")
 	play("Idle")
 	emit_signal("idled")

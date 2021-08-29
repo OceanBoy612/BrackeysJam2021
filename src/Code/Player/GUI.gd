@@ -7,6 +7,18 @@ onready var player: Player = get_parent().get_parent() as Player
 
 func _ready():
 	player.connect("hit", self, "on_player_hit")
+	player.connect("shot", self, "_on_player_shot")
+	player.connect("picked_up_item", self, "_on_player_shot")
+	player.connect("shuffled_deck", self, "_on_player_shot")
+	yield(player, "ready")
+	_on_player_shot()
+
+
+func _on_player_shot():
+	print(player.draw_pile)
+	if player.draw_pile.size() > 0:
+		var bullet = Globals.items[player.draw_pile[0]].instance()
+		$NextBullet/Sprite.texture = bullet.get_node("Sprite").texture
 
 
 func on_player_hit():

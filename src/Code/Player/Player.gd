@@ -34,6 +34,7 @@ onready var health: float = max_health
 func _ready():
 	Globals.player = self
 	$Aimer/Blunderbuss.connect("shot", self, "shoot")
+	$Aimer/Blunderbuss.connect("charged_shot", self, "charged_shoot")
 	
 	$Healthbar.max_value = max_health
 	$Healthbar.value = health
@@ -87,6 +88,13 @@ func can_shoot():
 	return Input.is_action_pressed("shoot") and OS.get_system_time_msecs() - time_since_last_shot > reload_time_msecs
 
 
+func charged_shoot():
+	shot_accuracy = 30
+	shoot()
+	shoot()
+	shoot()
+	shot_accuracy = 0
+
 func shoot():
 #	print("Shoot")
 	if draw_pile.empty():
@@ -106,6 +114,9 @@ func shoot():
 	discard_pile.push_back(current_card_name)
 
 	time_since_last_shot = OS.get_system_time_msecs()
+	
+	if draw_pile.empty():
+		shuffle()
 
 	emit_signal("shot")
 
@@ -144,6 +155,7 @@ func pickup_item(item: String):
 	discard_pile.append(item)
 	$PickUpSound.play()
 	print(discard_pile)
+#	shuffle()
 	emit_signal("picked_up_item")
 
 
