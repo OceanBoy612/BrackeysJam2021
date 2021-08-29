@@ -5,7 +5,7 @@ extends Node2D
 signal all_enemies_killed
 
 
-export var enemy_tscn: PackedScene
+export(Array, PackedScene) var enemy_tscns
 export var min_enemies = 3
 export var max_enemies = 4
 export var waves = 3
@@ -29,7 +29,7 @@ func spawn_wave():
 	var enemies_to_spawn:int = rand_range(min_enemies, max_enemies) as int
 	var spawn_positions = get_spawn_positions()
 	for i in enemies_to_spawn:
-		var enemy = enemy_tscn.instance()
+		var enemy = enemy_tscns[randi() % enemy_tscns.size()].instance()
 		var pos: Vector2 = global_position
 		if spawn_positions.size() > 0:
 			spawn_positions.shuffle()
