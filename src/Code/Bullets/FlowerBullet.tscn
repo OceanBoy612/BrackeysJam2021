@@ -12,6 +12,7 @@ damage = 4
 time_alive = 0.5
 shot_cone = 10.0
 rotate = false
+knockback_power = 450
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

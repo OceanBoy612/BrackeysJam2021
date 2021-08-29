@@ -11,6 +11,7 @@ speed = 250.0
 damage = 3
 time_alive = 3.0
 rotate = false
+knockback_power = 100
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )
