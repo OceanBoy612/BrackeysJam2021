@@ -138,31 +138,6 @@ position = Vector2( -72, 80 )
 [node name="6" type="Position2D" parent="Spawners/WaveSpawner4"]
 position = Vector2( -32, 16 )
 
-[node name="WaveSpawner5" parent="Spawners" instance=ExtResource( 4 )]
-position = Vector2( 714.375, 969.277 )
-enemy_tscns = [ ExtResource( 13 ) ]
-min_enemies = 1
-max_enemies = 2
-waves = 1
-
-[node name="1" type="Position2D" parent="Spawners/WaveSpawner5"]
-position = Vector2( -192, -88 )
-
-[node name="2" type="Position2D" parent="Spawners/WaveSpawner5"]
-position = Vector2( 112, -104 )
-
-[node name="3" type="Position2D" parent="Spawners/WaveSpawner5"]
-position = Vector2( -192, -8 )
-
-[node name="4" type="Position2D" parent="Spawners/WaveSpawner5"]
-position = Vector2( 40, 112 )
-
-[node name="5" type="Position2D" parent="Spawners/WaveSpawner5"]
-position = Vector2( -128, 96 )
-
-[node name="6" type="Position2D" parent="Spawners/WaveSpawner5"]
-position = Vector2( 144, 88 )
-
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 144, 168 )
 speed = 225
@@ -242,3 +217,6 @@ position = Vector2( 732.563, 455.377 )
 
 [node name="LootBox3" parent="." instance=ExtResource( 25 )]
 position = Vector2( 736.805, 719.835 )
+
+[node name="CornWalker" parent="." instance=ExtResource( 22 )]
+position = Vector2( 808, 1008 )
