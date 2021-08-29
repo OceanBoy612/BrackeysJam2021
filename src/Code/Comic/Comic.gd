@@ -5,7 +5,7 @@ signal finished
 
 
 export var fade_dur = 1.0
-export var main_scene: PackedScene = preload("res://Code/World.tscn")
+#export var main_scene: PackedScene = preload("res://Code/World.tscn")
 
 
 var max_frames = 15
@@ -14,14 +14,16 @@ onready var i_frame = max_frames
 
 
 func _ready():
+	get_tree().paused = true
 	next_frame()
 	connect("finished", self, "comic_done")
 
 
 func comic_done():
 	queue_free()
-	var scene = main_scene.instance()
-	get_parent().add_child(scene)
+	get_tree().paused = false
+#	var scene = main_scene.instance()
+#	get_parent().add_child(scene)
 
 
 func _input(event):

@@ -16,7 +16,7 @@ var lootcount = 0
 
 func _ready():
 	get_node("/root/World").connect("room_cleared", self, "_get_loot")
-	yield(get_tree().create_timer(0.2), "timeout")
+	yield(get_tree().create_timer(0.02), "timeout")
 	if lootroom == -1:
 		drop_loot()
 		print("TEST")
