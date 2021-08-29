@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -33,6 +33,11 @@
 [ext_resource path="res://Art/Pngs/Pal2.png" type="Texture" id=31]
 [ext_resource path="res://Art/Pngs/Pal5.png" type="Texture" id=32]
 [ext_resource path="res://Art/Pngs/Pal4.png" type="Texture" id=33]
+[ext_resource path="res://Art/Pngs/Text2.png" type="Texture" id=34]
+[ext_resource path="res://Art/Pngs/Text3.png" type="Texture" id=35]
+[ext_resource path="res://Art/Pngs/Text4.png" type="Texture" id=36]
+[ext_resource path="res://Art/Pngs/Text5.png" type="Texture" id=37]
+[ext_resource path="res://Art/Pngs/Text1.png" type="Texture" id=38]
 
 [node name="World" type="YSort"]
 script = ExtResource( 23 )
@@ -268,13 +273,13 @@ position = Vector2( 168, 24 )
 texture = ExtResource( 29 )
 
 [node name="Avatar2" parent="Node2D" instance=ExtResource( 28 )]
-position = Vector2( 88, -48 )
+position = Vector2( 104, -48 )
 
 [node name="Sprite2" parent="Node2D/Avatar2" index="6"]
 texture = ExtResource( 31 )
 
 [node name="Avatar3" parent="Node2D" instance=ExtResource( 28 )]
-position = Vector2( -88, -56 )
+position = Vector2( -96, -56 )
 
 [node name="Sprite2" parent="Node2D/Avatar3" index="6"]
 texture = ExtResource( 30 )
@@ -290,6 +295,28 @@ position = Vector2( -176, 0 )
 
 [node name="Sprite2" parent="Node2D/Avatar5" index="6"]
 texture = ExtResource( 32 )
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="Text1" type="Sprite" parent="Text"]
+position = Vector2( 1216, 1040 )
+texture = ExtResource( 38 )
+
+[node name="Text2" type="Sprite" parent="Text"]
+position = Vector2( 1560, 1064 )
+texture = ExtResource( 34 )
+
+[node name="Text3" type="Sprite" parent="Text"]
+position = Vector2( 1496, 992 )
+texture = ExtResource( 35 )
+
+[node name="Text4" type="Sprite" parent="Text"]
+position = Vector2( 1392, 968 )
+texture = ExtResource( 36 )
+
+[node name="Text5" type="Sprite" parent="Text"]
+position = Vector2( 1288, 984 )
+texture = ExtResource( 37 )
 
 [editable path="Node2D/Avatar"]
 [editable path="Node2D/Avatar2"]
