@@ -8,10 +8,11 @@
 radius = 14.0238
 
 [node name="ChairBullet" instance=ExtResource( 1 )]
-damage = 10
+damage = 5
 time_alive = 0.8
 shot_cone = 30.0
 break_sound = ExtResource( 3 )
+knockback_power = 600
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

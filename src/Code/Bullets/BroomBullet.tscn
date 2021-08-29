@@ -9,9 +9,10 @@ extents = Vector2( 14.2585, 2.64546 )
 
 [node name="BroomBullet" instance=ExtResource( 2 )]
 speed = 400.0
-damage = 4
+damage = 5
 rotate = false
 break_sound = ExtResource( 3 )
+knockback_power = 200
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

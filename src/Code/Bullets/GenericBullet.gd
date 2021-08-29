@@ -12,6 +12,7 @@ export var shot_cone = 0.0 # 0 means perfectly accurate, 30 means bullets can go
 export var rotate = true
 export var break_sound: AudioStream
 export var scene_to_spawn: PackedScene
+export var knockback_power = 300
 
 
 onready var fragment_tscn = preload("res://Code/Fragmentation/Fragment.tscn")
@@ -46,6 +47,9 @@ func _physics_process(delta):
 	
 	for i in get_slide_count():
 		var col: KinematicCollision2D = get_slide_collision(i)
+		if col.collider.has_method("_knockback"):
+			var dir = (col.collider.global_position-global_position).normalized()
+			col.collider._knockback(dir, knockback_power)
 		if col.collider.has_method("damage"):
 			col.collider.damage(damage)
 			die()

@@ -12,6 +12,7 @@ damage = 0
 shot_cone = 15.0
 break_sound = ExtResource( 4 )
 scene_to_spawn = ExtResource( 3 )
+knockback_power = 100
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )

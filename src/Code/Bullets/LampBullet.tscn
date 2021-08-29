@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id=1]
 
 [node name="LampBullet" instance=ExtResource( 2 )]
-damage = 4
+damage = 5
 time_alive = 0.8
 shot_cone = 20.0
 break_sound = ExtResource( 3 )

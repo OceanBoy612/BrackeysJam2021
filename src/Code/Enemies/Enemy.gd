@@ -7,7 +7,10 @@ signal hit
 export var speed = 250
 export var health: float = 1.0
 export var damage: float = 1.0
+export var knockbackSpeed = 300 
 var move_dir = Vector2(1,0)
+var hitstun = 0
+var knockback = Vector2.ZERO
 
 
 func _ready():
@@ -28,13 +31,22 @@ func _physics_process(delta):
 	if not Globals.player:
 		return
 	enemy_process(delta)
-
+	
 
 func enemy_process(_delta):
 	move_dir = get_dir_to_player()
-	var _vel = move_and_slide(move_dir * speed)
+	if hitstun == 0:
+		var _vel = move_and_slide(move_dir * speed)
+	else:
+		var _vel = move_and_slide(knockback)
+	if hitstun > 0:
+		 hitstun -= 1
 	emit_signal("moved")
 
+
+func _knockback(dir, power):
+	hitstun = 6
+	knockback = (dir.normalized() * power) 
 
 func damage(amt: float):
 	health -= amt

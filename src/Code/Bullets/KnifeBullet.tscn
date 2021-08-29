@@ -8,10 +8,11 @@
 
 [node name="KnifeBullet" instance=ExtResource( 1 )]
 speed = 600.0
-damage = 3
+damage = 5
 time_alive = 3.0
 shot_cone = 15.0
 break_sound = ExtResource( 3 )
+knockback_power = 100
 
 [node name="Shape" parent="." index="0"]
 shape = SubResource( 1 )
