@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -14,6 +14,11 @@
 [ext_resource path="res://Code/Items/HedgeHogItem.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Code/Enemies/Pumpkin.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Art/Tilesets/house.tres" type="TileSet" id=14]
+[ext_resource path="res://Code/Items/FlowerItem.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Code/Items/TeddyItem.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Code/Items/QuillItem.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Code/Items/PumpkinItem.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Code/Items/TeapotItem.tscn" type="PackedScene" id=19]
 
 [node name="World" type="YSort"]
 script = ExtResource( 3 )
@@ -61,7 +66,7 @@ delay = 11.0
 position = Vector2( 396.016, 32.4518 )
 entity_tscn = ExtResource( 13 )
 amount = -1
-delay = 2.0
+delay = 6.0
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 130.493, 168.055 )
@@ -96,3 +101,18 @@ position = Vector2( 375.122, 183.408 )
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 375.122, 183.408 )
 color = Color( 0.647059, 0.592157, 0.694118, 1 )
+
+[node name="TeddyItem" parent="." instance=ExtResource( 16 )]
+position = Vector2( 199.327, 158.352 )
+
+[node name="TeapotItem" parent="." instance=ExtResource( 19 )]
+position = Vector2( 240.117, 175.303 )
+
+[node name="QuillItem" parent="." instance=ExtResource( 17 )]
+position = Vector2( 275.609, 201.26 )
+
+[node name="PumpkinItem" parent="." instance=ExtResource( 18 )]
+position = Vector2( 309.511, 141.93 )
+
+[node name="FlowerItem" parent="." instance=ExtResource( 15 )]
+position = Vector2( 346.063, 236.752 )

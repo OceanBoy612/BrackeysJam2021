@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LAMP3_BB_sfx.wav-e9a8c5ed851a437147f5888bc0e63fe2.sample"
+
+[deps]
+
+source_file="res://Audio/LAMP3_BB_sfx.wav"
+dest_files=[ "res://.import/LAMP3_BB_sfx.wav-e9a8c5ed851a437147f5888bc0e63fe2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
