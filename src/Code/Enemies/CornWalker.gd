@@ -12,9 +12,10 @@ func _ready():
 
 func damage(amt):
 	.damage(amt)
-	set_physics_process(true)
-	if $AttackTimer.is_stopped():
-		$AttackTimer.start()
+	if not dead:
+		set_physics_process(true)
+		if $AttackTimer.is_stopped():
+			$AttackTimer.start()
 
 
 func enemy_process(_delta):
