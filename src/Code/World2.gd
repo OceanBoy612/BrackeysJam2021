@@ -3,7 +3,21 @@ extends "res://Code/World.gd"
 
 onready var width = ProjectSettings.get_setting("display/window/size/width")
 onready var height = ProjectSettings.get_setting("display/window/size/height")
-var cell_size = 16
+var cell_size = 32
+
+
+
+"""
+576   320
+
+ (288, 160) - 0, 288
+ (288, 448) - 544, 0
+ (832, 448)
+
+"""
+
+
+
 
 func _ready():
 	player.connect("screen_exited", self, "on_screen_exited")
@@ -44,6 +58,7 @@ func move_camera(side: String):
 			cam.position.y -= height - cell_size
 		_:
 			push_warning("No side found, not moving camera")
+	print(cam.position.x / width, "   ", cam.position.y / height)
 
 
 func get_side_player_left_screen_on() -> String:
