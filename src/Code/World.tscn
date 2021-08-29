@@ -21,7 +21,7 @@
 [ext_resource path="res://Code/Items/TeapotItem.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Art/Pngs/Controls.png" type="Texture" id=20]
 [ext_resource path="res://Code/Enemies/HedgeHog.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Code/Enemies/CornWalker.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Code/World2.gd" type="Script" id=23]
 [ext_resource path="res://Audio/BB_TRACK2_v1.wav" type="AudioStream" id=24]
 

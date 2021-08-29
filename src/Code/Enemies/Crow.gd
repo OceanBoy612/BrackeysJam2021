@@ -33,7 +33,6 @@ enum {
 	LANDING,
 }
 
-
 func _ready():
 	connect("died", self, "reset_sprite_angle")
 	set_state(WANDERING)
