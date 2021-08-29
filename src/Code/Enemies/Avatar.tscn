@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Code/Enemies/Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Code/Enemies/Avatar.gd" type="Script" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="Animation" id=2]
+resource_name = "Bob_and_weave"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -4.37029, -15.7253 ), Vector2( 0, -23.274 ), Vector2( 4.37, -15.725 ), Vector2( 0, -23.274 ), Vector2( -4.37029, -15.7253 ) ]
+}
+
+[node name="Avatar" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Shape" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Sprite2" type="Sprite" parent="." index="6"]
+position = Vector2( 0.959357, -21.6167 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+playback_speed = 0.3
+anims/Bob_and_weave = SubResource( 2 )
