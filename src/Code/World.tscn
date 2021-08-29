@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Code/World2.gd" type="Script" id=23]
 [ext_resource path="res://Audio/BB_TRACK2_v1.wav" type="AudioStream" id=24]
 [ext_resource path="res://Code/Spawner/LootBox.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=26]
 
 [node name="World" type="YSort"]
 script = ExtResource( 23 )
@@ -68,7 +69,7 @@ position = Vector2( 93.6252, 54.7231 )
 
 [node name="WaveSpawner2" parent="Spawners" instance=ExtResource( 4 )]
 position = Vector2( 210.375, 401.277 )
-enemy_tscns = [ ExtResource( 22 ), ExtResource( 21 ) ]
+enemy_tscns = [ ExtResource( 13 ) ]
 
 [node name="1" type="Position2D" parent="Spawners/WaveSpawner2"]
 position = Vector2( 144, 40 )
@@ -90,7 +91,7 @@ position = Vector2( -72, -32 )
 
 [node name="WaveSpawner3" parent="Spawners" instance=ExtResource( 4 )]
 position = Vector2( 730.375, 417.277 )
-enemy_tscns = [ ExtResource( 13 ) ]
+enemy_tscns = [ ExtResource( 13 ), ExtResource( 26 ) ]
 min_enemies = 1
 max_enemies = 2
 waves = 1
@@ -115,9 +116,7 @@ position = Vector2( -56, -112 )
 
 [node name="WaveSpawner4" parent="Spawners" instance=ExtResource( 4 )]
 position = Vector2( 722.375, 681.277 )
-enemy_tscns = [ ExtResource( 13 ) ]
-min_enemies = 1
-max_enemies = 2
+enemy_tscns = [ ExtResource( 26 ), ExtResource( 21 ) ]
 waves = 1
 
 [node name="1" type="Position2D" parent="Spawners/WaveSpawner4"]
@@ -137,6 +136,29 @@ position = Vector2( -72, 80 )
 
 [node name="6" type="Position2D" parent="Spawners/WaveSpawner4"]
 position = Vector2( -32, 16 )
+
+[node name="WaveSpawner5" parent="Spawners" instance=ExtResource( 4 )]
+position = Vector2( 722.375, 961.277 )
+enemy_tscns = [ ExtResource( 26 ), ExtResource( 21 ) ]
+waves = 1
+
+[node name="1" type="Position2D" parent="Spawners/WaveSpawner5"]
+position = Vector2( 6.10352e-05, 15.9999 )
+
+[node name="2" type="Position2D" parent="Spawners/WaveSpawner5"]
+position = Vector2( 200, -72.0001 )
+
+[node name="3" type="Position2D" parent="Spawners/WaveSpawner5"]
+position = Vector2( -168, -32.0001 )
+
+[node name="4" type="Position2D" parent="Spawners/WaveSpawner5"]
+position = Vector2( 40, 112 )
+
+[node name="5" type="Position2D" parent="Spawners/WaveSpawner5"]
+position = Vector2( -144, 104 )
+
+[node name="6" type="Position2D" parent="Spawners/WaveSpawner5"]
+position = Vector2( 160, 48 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
 position = Vector2( 144, 168 )
@@ -217,7 +239,7 @@ lootroom = 0
 position = Vector2( 732.563, 455.377 )
 
 [node name="LootBox3" parent="." instance=ExtResource( 25 )]
-position = Vector2( 736.805, 719.835 )
+position = Vector2( 736, 720 )
 
 [node name="CornWalker" parent="." instance=ExtResource( 22 )]
 position = Vector2( 808, 1008 )

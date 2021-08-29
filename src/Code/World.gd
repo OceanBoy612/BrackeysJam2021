@@ -8,7 +8,7 @@ onready var cam: Camera2D = $Camera2D
 func _ready():
 	player.connect("shot", self, "on_player_shot")
 	player.connect("charged", self, "on_player_charged")
-	player.connect("moved", self, "on_player_moved")
+#	player.connect("moved", self, "on_player_moved")
 	player.connect("died", self, "on_player_died")
 	player.connect("hit", self, "on_player_hit")
 
