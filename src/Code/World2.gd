@@ -65,7 +65,7 @@ func move_camera(side: String):
 			cam.position.y -= height - cell_size
 		_:
 			push_warning("No side found, not moving camera")
-	print(cam.position.x / width, "   ", cam.position.y / height)
+#	print(cam.position.x / width, "   ", cam.position.y / height)
 
 
 func get_side_player_left_screen_on() -> String:

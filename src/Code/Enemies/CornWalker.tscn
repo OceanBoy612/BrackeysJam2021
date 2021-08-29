@@ -15,7 +15,7 @@ health = 15.0
 
 [node name="Sprite" parent="." index="0"]
 frames = ExtResource( 1 )
-animation = "Walk"
+animation = "Idle"
 script = ExtResource( 3 )
 
 [node name="Shape" parent="." index="1"]
@@ -27,7 +27,6 @@ wait_time = 5.0
 autostart = true
 
 [node name="AttackTimer" type="Timer" parent="." index="7"]
-autostart = true
 
 [node name="KernalSpawn" type="Position2D" parent="." index="8"]
 position = Vector2( 0, -13.0747 )

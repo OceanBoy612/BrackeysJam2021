@@ -6,7 +6,15 @@ onready var kernal_tscn = preload("res://Code/Bullets/KernalBullet.tscn")
 
 
 func _ready():
+	set_physics_process(false)
 	$ChangeDirections.wait_time *= rand_range(0.9, 1.1)
+
+
+func damage(amt):
+	.damage(amt)
+	set_physics_process(true)
+	if $AttackTimer.is_stopped():
+		$AttackTimer.start()
 
 
 func enemy_process(_delta):
@@ -32,7 +40,7 @@ func _on_AttackTimer_timeout():
 		return
 	
 	var kernal = kernal_tscn.instance()
-	kernal.global_position = $KernalSpawn.global_position + (move_dir * 25)
+	kernal.global_position = $KernalSpawn.global_position + (get_dir_to_player() * 25)
 	kernal.set_as_toplevel(true)
 	kernal.rotate(get_dir_to_player().angle())
 	kernal.hurt_player()
