@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Code/Items/PumpkinItem.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Code/Items/TeapotItem.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Art/Pngs/Controls.png" type="Texture" id=20]
+[ext_resource path="res://Code/Enemies/HedgeHog.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Code/World2.gd" type="Script" id=23]
 
@@ -61,7 +62,7 @@ position = Vector2( 93.6252, 54.7231 )
 
 [node name="WaveSpawner2" parent="Spawners" instance=ExtResource( 4 )]
 position = Vector2( 210.375, 401.277 )
-enemy_tscns = [ ExtResource( 22 ), ExtResource( 13 ) ]
+enemy_tscns = [ ExtResource( 22 ), ExtResource( 21 ) ]
 
 [node name="1" type="Position2D" parent="Spawners/WaveSpawner2"]
 position = Vector2( 144, 40 )
