@@ -24,6 +24,8 @@ func _ready():
 	for spawner in $Spawners.get_children():
 		spawner.connect("all_enemies_killed", self, "on_all_enemies_killed")
 	on_screen_exited()
+	
+	$BG_music.play()
 
 
 func on_all_enemies_killed():

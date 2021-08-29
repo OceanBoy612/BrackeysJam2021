@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Code/Enemies/HedgeHog.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Code/World2.gd" type="Script" id=23]
+[ext_resource path="res://Audio/BB_TRACK2_v1.wav" type="AudioStream" id=24]
 
 [node name="World" type="YSort"]
 script = ExtResource( 23 )
@@ -227,3 +228,6 @@ position = Vector2( 760, 872 )
 
 [node name="Fence" parent="." instance=ExtResource( 7 )]
 position = Vector2( 360, 296 )
+
+[node name="BG_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
