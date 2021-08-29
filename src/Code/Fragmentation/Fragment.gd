@@ -11,6 +11,8 @@ func _ready():
 	
 	$BreakSound.play()
 	$AnimationPlayer.play("fragment2")
+	yield($BreakSound, "finished")
+	queue_free()
 
 
 func init(text: Texture, sound: AudioStream):
