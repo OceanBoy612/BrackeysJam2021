@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Art/Pngs/Comic/Frame0008.png" type="Texture" id=1]
 [ext_resource path="res://Art/Pngs/Comic/Frame0011.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Art/Pngs/Comic/Frame0012.png" type="Texture" id=12]
 [ext_resource path="res://Code/Comic/Comic.gd" type="Script" id=13]
 [ext_resource path="res://Art/Pngs/Comic/Frame0013.png" type="Texture" id=14]
+[ext_resource path="res://Art/Pngs/Kraliko.png" type="Texture" id=15]
 
 [node name="Comic" type="Control"]
 anchor_right = 1.0
@@ -22,7 +23,7 @@ script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-fade_dur = 2.0
+fade_dur = 1.5
 
 [node name="bg" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -162,8 +163,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Frame0014" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 15 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 1.4
+wait_time = 2.1
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

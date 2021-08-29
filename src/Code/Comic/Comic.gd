@@ -7,13 +7,20 @@ signal finished
 export var fade_dur = 1.0
 
 
-var max_frames = 14
+var max_frames = 15
+var last_frame = 1
 onready var i_frame = max_frames
+
+
+func _ready():
+	next_frame()
 
 
 func _input(event):
 	if event.is_action("shoot") and event.is_pressed():
-		next_frame()
+		print(i_frame)
+		if i_frame > 1:
+			next_frame()
 
 
 func next_frame():
@@ -24,7 +31,8 @@ func next_frame():
 		if not frame is TextureRect:
 			continue
 		if i > i_frame:
-			frame.hide()
+#			frame.hide()
+			pass
 		elif i == i_frame:
 			disapear(frame)
 		else:
@@ -32,9 +40,6 @@ func next_frame():
 			frame.modulate = Color(1,1,1,1)
 	i_frame -= 1
 	
-	if i_frame <= 0:
-		emit_signal("finished")
-		reset_comic()
 	
 
 func reset_comic():
@@ -53,8 +58,14 @@ func disapear(control: Control):
 func kill_tween(tween: Tween):
 #	print("tween dead")
 	tween.queue_free()
+	if i_frame == last_frame:
+		emit_signal("finished")
+		print("!!!")
+		$Timer.stop()
+		
 
 
 func _on_Timer_timeout():
-	next_frame()
+	if i_frame > last_frame:
+		next_frame()
 	pass # Replace with function body.
