@@ -32,12 +32,14 @@ frame = 2
 
 [node name="Die2" type="AudioStreamPlayer2D" parent="Sprite" index="1"]
 stream = ExtResource( 4 )
+pitch_scale = 0.63
 script = ExtResource( 6 )
 animation_name = "Die"
 frame = 4
 
 [node name="Attack" type="AudioStreamPlayer2D" parent="Sprite" index="2"]
 stream = ExtResource( 8 )
+pitch_scale = 1.33
 script = ExtResource( 6 )
 animation_name = "Attack"
 

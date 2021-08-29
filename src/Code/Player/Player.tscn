@@ -41,11 +41,15 @@ script = ExtResource( 3 )
 
 [node name="Leg1" type="AudioStreamPlayer2D" parent="Sprite"]
 stream = ExtResource( 7 )
+volume_db = -5.361
+pitch_scale = 1.45
 script = ExtResource( 18 )
 animation_name = "Walk"
 
 [node name="Leg2" type="AudioStreamPlayer2D" parent="Sprite"]
 stream = ExtResource( 17 )
+volume_db = -4.289
+pitch_scale = 1.21
 script = ExtResource( 18 )
 animation_name = "Walk"
 frame = 3

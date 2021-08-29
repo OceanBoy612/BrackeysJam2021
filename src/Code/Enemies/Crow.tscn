@@ -1,9 +1,13 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Code/Enemies/Enemy.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Code/Enemies/Crow.gd" type="Script" id=2]
 [ext_resource path="res://Art/Spriteframes/Crow_spriteframes.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Code/Enemies/PumpkinSprite.gd" type="Script" id=4]
+[ext_resource path="res://Audio/EnemyAudio/CROW_ENEMY1_BB_sfx.wav" type="AudioStream" id=5]
+[ext_resource path="res://Code/Audio/SpriteSound.gd" type="Script" id=6]
+[ext_resource path="res://Audio/EnemyAudio/BIRD_MISSILE2_BB_sfx.wav" type="AudioStream" id=7]
+[ext_resource path="res://Code/Enemies/MissileSound.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.1946, 14.9538 )
@@ -20,6 +24,11 @@ frames = ExtResource( 3 )
 animation = "Charge"
 script = ExtResource( 4 )
 
+[node name="Die" type="AudioStreamPlayer2D" parent="Sprite" index="0"]
+stream = ExtResource( 5 )
+script = ExtResource( 6 )
+animation_name = "Die"
+
 [node name="Shape" parent="." index="1"]
 position = Vector2( 0, -15.026 )
 shape = SubResource( 1 )
@@ -29,5 +38,9 @@ one_shot = true
 
 [node name="SmokeSpawn" type="Position2D" parent="." index="5"]
 position = Vector2( 0, -15.7331 )
+
+[node name="MissileLoop" type="AudioStreamPlayer2D" parent="." index="8"]
+stream = ExtResource( 7 )
+script = ExtResource( 8 )
 
 [connection signal="animation_finished" from="Sprite" to="." method="_on_Sprite_animation_finished"]

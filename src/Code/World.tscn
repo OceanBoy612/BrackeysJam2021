@@ -207,6 +207,7 @@ position = Vector2( 360, 296 )
 
 [node name="BG_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
+<<<<<<< Updated upstream
 
 [node name="LootBox" parent="." instance=ExtResource( 25 )]
 position = Vector2( 387.495, 412.95 )
@@ -220,3 +221,6 @@ position = Vector2( 736.805, 719.835 )
 
 [node name="CornWalker" parent="." instance=ExtResource( 22 )]
 position = Vector2( 808, 1008 )
+=======
+volume_db = -15.0
+>>>>>>> Stashed changes
