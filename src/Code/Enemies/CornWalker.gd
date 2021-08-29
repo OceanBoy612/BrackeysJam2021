@@ -8,12 +8,14 @@ onready var kernal_tscn = preload("res://Code/Bullets/KernalBullet.tscn")
 func _ready():
 	set_physics_process(false)
 	$ChangeDirections.wait_time *= rand_range(0.9, 1.1)
+	$Sprite.play("Idle")
 
 
 func damage(amt):
 	.damage(amt)
 	if not dead:
 		set_physics_process(true)
+		$Sprite.play("Walk")
 		if $AttackTimer.is_stopped():
 			$AttackTimer.start()
 
