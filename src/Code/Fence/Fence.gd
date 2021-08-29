@@ -9,7 +9,7 @@ func _ready():
 
 
 func open():
-	print("open")
+#	print("open")
 	if not $VisibilityNotifier2D.is_on_screen():
 		return
 	if is_open:
@@ -22,13 +22,13 @@ func open():
 
 
 func close():
-	print("close1")
+#	print("close1")
 	if not $VisibilityNotifier2D.is_on_screen():
 		return
-	print("close2")
+#	print("close2")
 	if not is_open:
 		return
-	print("close3")
+#	print("close3")
 	
 	$Sprite.play("Close")
 	yield($Sprite, "animation_finished")
