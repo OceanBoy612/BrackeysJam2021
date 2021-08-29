@@ -33,6 +33,7 @@ frame = 2
 [node name="Die2" type="AudioStreamPlayer2D" parent="Sprite" index="1"]
 stream = ExtResource( 4 )
 pitch_scale = 0.63
+attenuation = 6.49802
 script = ExtResource( 6 )
 animation_name = "Die"
 frame = 4
