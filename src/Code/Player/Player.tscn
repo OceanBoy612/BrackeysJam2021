@@ -207,5 +207,6 @@ stream = ExtResource( 22 )
 [connection signal="charged" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_charged"]
 [connection signal="fired" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_fired"]
 [connection signal="idled" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_idled"]
+[connection signal="super_charged" from="Aimer/Blunderbuss" to="ChargeSound" method="_on_Blunderbuss_super_charged"]
 [connection signal="wound_up" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_wound_up"]
 [connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

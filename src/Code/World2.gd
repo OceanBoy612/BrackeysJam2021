@@ -20,6 +20,11 @@ var cell_size = 32
 """
 
 
+func _input(event):
+	if event.is_action_pressed("ui_end"):
+		var enemies = get_tree().get_nodes_in_group("spawned_enemies")
+		for e in enemies:
+			e.damage(100)
 
 
 func _ready():

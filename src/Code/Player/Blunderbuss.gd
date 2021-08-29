@@ -9,6 +9,8 @@ signal fired
 signal idled
 signal reloaded
 
+signal super_charged
+
 
 var charging = false
 var firing = false
@@ -37,6 +39,9 @@ func windup():
 	
 	if got_shoot_signal:
 		release()
+	else:
+		print("HAHA")
+		emit_signal("super_charged")
 
 
 func shoot():

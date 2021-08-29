@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Code/Spawner/LootBox.tscn" type="PackedScene" id=25]
 [ext_resource path="res://Code/Enemies/Crow.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Art/Pngs/thanks4playing.png" type="Texture" id=27]
+[ext_resource path="res://Code/Enemies/Avatar.tscn" type="PackedScene" id=28]
 
 [node name="World" type="YSort"]
 script = ExtResource( 23 )
@@ -242,10 +243,30 @@ lootroom = 2
 [node name="CornWalker" parent="." instance=ExtResource( 22 )]
 position = Vector2( 808, 1008 )
 
-[node name="thanks4playing" type="Sprite" parent="."]
-position = Vector2( 1368, 1040 )
-scale = Vector2( 2.41666, 2.41666 )
-texture = ExtResource( 27 )
-
 [node name="Fence5" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1112, 1016 )
+
+[node name="thanks4playing" type="Sprite" parent="."]
+position = Vector2( 1384, 912 )
+scale = Vector2( 2.41666, 2.41666 )
+z_index = -4
+texture = ExtResource( 27 )
+offset = Vector2( 0, 60 )
+
+[node name="Node2D" type="YSort" parent="."]
+position = Vector2( 1392, 1040 )
+
+[node name="Avatar" parent="Node2D" instance=ExtResource( 28 )]
+position = Vector2( 168, 24 )
+
+[node name="Avatar2" parent="Node2D" instance=ExtResource( 28 )]
+position = Vector2( 88, -48 )
+
+[node name="Avatar3" parent="Node2D" instance=ExtResource( 28 )]
+position = Vector2( -88, -56 )
+
+[node name="Avatar4" parent="Node2D" instance=ExtResource( 28 )]
+position = Vector2( 0, -64 )
+
+[node name="Avatar5" parent="Node2D" instance=ExtResource( 28 )]
+position = Vector2( -192, 16 )
