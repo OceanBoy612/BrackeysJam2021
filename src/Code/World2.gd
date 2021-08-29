@@ -1,6 +1,9 @@
 extends "res://Code/World.gd"
 
 
+signal room_cleared
+
+
 onready var width = ProjectSettings.get_setting("display/window/size/width")
 onready var height = ProjectSettings.get_setting("display/window/size/height")
 var cell_size = 32
@@ -30,6 +33,8 @@ func _ready():
 
 func on_all_enemies_killed():
 	get_tree().call_group("fences", "open")
+	print("Room cleared!!!")
+	emit_signal("room_cleared")
 
 
 func on_screen_exited():
