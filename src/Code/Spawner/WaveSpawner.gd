@@ -9,6 +9,7 @@ export(Array, PackedScene) var enemy_tscns
 export var min_enemies = 3
 export var max_enemies = 4
 export var waves = 3
+export var delay_between_waves = 0.7
 
 var enemies_spawned = 0
 
@@ -50,6 +51,7 @@ func on_spawned_enemy_died():
 		if waves <= 0:
 			emit_signal("all_enemies_killed")
 		else:
+			yield(get_tree().create_timer(delay_between_waves), "timeout")
 			spawn_wave()
 
 

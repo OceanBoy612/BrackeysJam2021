@@ -9,11 +9,15 @@ func _ready():
 	$Sprite.play("Spawn")
 	yield($Sprite, "animation_finished")
 	$Sprite.play("Walk")
-	set_physics_process(true)
+	if not dead:
+		set_physics_process(true)
 
 
 func _on_AttackTimer_timeout():
-	print("HIII")
+	if dead:
+		$AttackTimer.stop()
+		return
+	
 	var quill = quill_tscn.instance()
 	quill.global_position = $QuillSpawn.global_position + (move_dir * 18)
 	quill.set_as_toplevel(true)

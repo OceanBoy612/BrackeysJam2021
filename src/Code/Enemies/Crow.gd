@@ -35,7 +35,12 @@ enum {
 
 
 func _ready():
+	connect("died", self, "reset_sprite_angle")
 	set_state(WANDERING)
+
+
+func reset_sprite_angle():
+	$Sprite.rotation = 0
 
 
 func enemy_process(delta):
