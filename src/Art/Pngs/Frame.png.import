@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Text4.png-7c4de74568aa7c600e11ae0356aa3741.stex"
+path="res://.import/Frame.png-d7b6f64a565fe910ccc2ee8955633c6c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Pngs/Text4.png"
-dest_files=[ "res://.import/Text4.png-7c4de74568aa7c600e11ae0356aa3741.stex" ]
+source_file="res://Art/Pngs/Frame.png"
+dest_files=[ "res://.import/Frame.png-d7b6f64a565fe910ccc2ee8955633c6c.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
