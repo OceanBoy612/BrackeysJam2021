@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Art/Pngs/Bullets/Quill.png" type="Texture" id=1]
 [ext_resource path="res://Code/Bullets/GenericBullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Audio/BulletAudio/QUILL1_BB_sfx.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 6.94348, 2.40948 )
@@ -11,6 +12,7 @@ speed = 250.0
 damage = 3
 time_alive = 3.0
 rotate = false
+break_sound = ExtResource( 3 )
 knockback_power = 100
 
 [node name="Shape" parent="." index="0"]

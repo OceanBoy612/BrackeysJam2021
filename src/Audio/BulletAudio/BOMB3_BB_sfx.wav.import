@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BOMB3_BB_sfx.wav-ff5d99422803c9555cf2b7ec398aefd8.sample"
+
+[deps]
+
+source_file="res://Audio/BulletAudio/BOMB3_BB_sfx.wav"
+dest_files=[ "res://.import/BOMB3_BB_sfx.wav-ff5d99422803c9555cf2b7ec398aefd8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

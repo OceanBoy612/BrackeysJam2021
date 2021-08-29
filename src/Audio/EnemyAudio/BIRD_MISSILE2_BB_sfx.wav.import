@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BIRD_MISSILE2_BB_sfx.wav-0c3d8699232c5229fe3717747fcd1f17.sample"
+
+[deps]
+
+source_file="res://Audio/EnemyAudio/BIRD_MISSILE2_BB_sfx.wav"
+dest_files=[ "res://.import/BIRD_MISSILE2_BB_sfx.wav-0c3d8699232c5229fe3717747fcd1f17.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

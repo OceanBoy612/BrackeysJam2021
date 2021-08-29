@@ -141,6 +141,7 @@ func update_aimer_position():
 func pickup_item(item: String):
 	print("Picked up item, ", item)
 	discard_pile.append(item)
+	$PickUpSound.play()
 	print(discard_pile)
 	emit_signal("picked_up_item")
 
@@ -158,6 +159,7 @@ func damage(amt: float):
 		emit_signal("died")
 	else:
 		emit_signal("hit")
+		$HurtSound.play()
 
 
 func _on_VisibilityNotifier2D_screen_exited():

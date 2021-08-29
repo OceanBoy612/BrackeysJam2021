@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FLOWER1_BB_sfx.wav-bc9fed3554d62c87e80001fa4a509ebe.sample"
+
+[deps]
+
+source_file="res://Audio/BulletAudio/FLOWER1_BB_sfx.wav"
+dest_files=[ "res://.import/FLOWER1_BB_sfx.wav-bc9fed3554d62c87e80001fa4a509ebe.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

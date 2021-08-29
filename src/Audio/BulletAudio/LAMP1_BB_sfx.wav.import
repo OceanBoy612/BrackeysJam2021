@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/LAMP1_BB_sfx.wav-feba2145cfc1d833ede07a3a41d811cd.sample"
+
+[deps]
+
+source_file="res://Audio/BulletAudio/LAMP1_BB_sfx.wav"
+dest_files=[ "res://.import/LAMP1_BB_sfx.wav-feba2145cfc1d833ede07a3a41d811cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

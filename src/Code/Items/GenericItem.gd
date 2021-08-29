@@ -11,4 +11,5 @@ func _on_GenericItem_body_entered(body):
 		print(item_name)
 		body.pickup_item(item_name)
 		emit_signal("picked_up")
+		$PickUpSound.play()
 		queue_free()

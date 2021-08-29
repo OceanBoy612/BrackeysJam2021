@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Art/Tilesets/Fence Gate/Fence_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Fence/Fence.gd" type="Script" id=2]
+[ext_resource path="res://Audio/GATE_OPEN1_BB_sfx.wav" type="AudioStream" id=3]
+[ext_resource path="res://Code/Audio/SpriteSound.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 37.2702, 10 )
@@ -16,6 +18,11 @@ shape = SubResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = ExtResource( 1 )
 animation = "Open"
+
+[node name="SpriteSound" type="AudioStreamPlayer2D" parent="Sprite"]
+stream = ExtResource( 3 )
+script = ExtResource( 4 )
+animation_name = "Open"
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
 position = Vector2( 0, 14 )

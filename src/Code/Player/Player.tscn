@@ -1,12 +1,12 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Art/Spriteframes/Player_spriteframes.tres" type="SpriteFrames" id=1]
 [ext_resource path="res://Code/Player/Player.gd" type="Script" id=2]
 [ext_resource path="res://Code/Player/Sprite/Sprite.gd" type="Script" id=3]
 [ext_resource path="res://Art/Spriteframes/Blunderbuss_spriteframes.tres" type="SpriteFrames" id=4]
 [ext_resource path="res://Code/Player/Blunderbuss.gd" type="Script" id=5]
-[ext_resource path="res://Audio/SHOOT5_BB_sfx.wav" type="AudioStream" id=6]
-[ext_resource path="res://Audio/FOOTSTEP_LOOP1_BB_sfx.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/GunAudio/SHOOT5_BB_sfx.wav" type="AudioStream" id=6]
+[ext_resource path="res://Audio/PlayerAudio/FOOTSTEP1_BB_sfx.wav" type="AudioStream" id=7]
 [ext_resource path="res://Art/Spriteframes/Dust_spriteframes.tres" type="SpriteFrames" id=8]
 [ext_resource path="res://Code/Player/GroundDust.gd" type="Script" id=9]
 [ext_resource path="res://Code/Player/WalkLoop.gd" type="Script" id=10]
@@ -16,6 +16,12 @@
 [ext_resource path="res://Art/Spriteframes/Head_spriteframes.tres" type="SpriteFrames" id=14]
 [ext_resource path="res://Code/Player/GUI.gd" type="Script" id=15]
 [ext_resource path="res://Art/Pngs/light_circle.png" type="Texture" id=16]
+[ext_resource path="res://Audio/PlayerAudio/FOOTSTEP2_BB_sfx.wav" type="AudioStream" id=17]
+[ext_resource path="res://Code/Audio/SpriteSound.gd" type="Script" id=18]
+[ext_resource path="res://Audio/PlayerAudio/GENERIC_PICKUP1_BB_sfx.wav" type="AudioStream" id=19]
+[ext_resource path="res://Audio/GunAudio/GUN_CHARGE2_BB_sfx.wav" type="AudioStream" id=20]
+[ext_resource path="res://Code/Player/ChargeSound.gd" type="Script" id=21]
+[ext_resource path="res://Audio/PlayerAudio/PLAYER_DAMAGE1_sfx.wav" type="AudioStream" id=22]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8.19074, 10.5732 )
@@ -32,6 +38,17 @@ position = Vector2( 0, -3.77593 )
 frames = ExtResource( 1 )
 animation = "Walk"
 script = ExtResource( 3 )
+
+[node name="Leg1" type="AudioStreamPlayer2D" parent="Sprite"]
+stream = ExtResource( 7 )
+script = ExtResource( 18 )
+animation_name = "Walk"
+
+[node name="Leg2" type="AudioStreamPlayer2D" parent="Sprite"]
+stream = ExtResource( 17 )
+script = ExtResource( 18 )
+animation_name = "Walk"
+frame = 3
 
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.6465 )
@@ -51,7 +68,6 @@ stream = ExtResource( 6 )
 script = ExtResource( 13 )
 
 [node name="WalkLoop" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 7 )
 script = ExtResource( 10 )
 
 [node name="GroundDust" type="AnimatedSprite" parent="."]
@@ -172,6 +188,17 @@ texture = ExtResource( 16 )
 texture_scale = 0.6
 color = Color( 0.741176, 0.662745, 0.470588, 1 )
 energy = 0.8
+
+[node name="PickUpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 19 )
+
+[node name="ChargeSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 20 )
+pitch_scale = 2.01
+script = ExtResource( 21 )
+
+[node name="HurtSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 22 )
 
 [connection signal="charged" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_charged"]
 [connection signal="fired" from="Aimer/Blunderbuss" to="Node/Cursor" method="_on_Blunderbuss_fired"]

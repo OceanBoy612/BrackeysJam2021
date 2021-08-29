@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PUMPKIN1_BB_sfx.wav-40ef76de6d162550eb5ac21e5a037e1a.sample"
+
+[deps]
+
+source_file="res://Audio/BulletAudio/PUMPKIN1_BB_sfx.wav"
+dest_files=[ "res://.import/PUMPKIN1_BB_sfx.wav-40ef76de6d162550eb5ac21e5a037e1a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PUMPKIN_ENEMY1_BB_sfx.wav-d8cd3c24b0955459617d7d1d26dd32c6.sample"
+
+[deps]
+
+source_file="res://Audio/EnemyAudio/PUMPKIN_ENEMY1_BB_sfx.wav"
+dest_files=[ "res://.import/PUMPKIN_ENEMY1_BB_sfx.wav-d8cd3c24b0955459617d7d1d26dd32c6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

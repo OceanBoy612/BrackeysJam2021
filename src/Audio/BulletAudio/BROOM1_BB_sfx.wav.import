@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/BROOM1_BB_sfx.wav-b45fd564a9f9411d9d2b0bbb64680270.sample"
+
+[deps]
+
+source_file="res://Audio/BulletAudio/BROOM1_BB_sfx.wav"
+dest_files=[ "res://.import/BROOM1_BB_sfx.wav-b45fd564a9f9411d9d2b0bbb64680270.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
