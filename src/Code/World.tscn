@@ -1,24 +1,13 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Art/Tilesets/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Code/Camera2D.gd" type="Script" id=2]
 [ext_resource path="res://Code/Fence/FenceSide.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Code/Spawner/WaveSpawner.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Code/Items/BombItem.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Code/Fence/Fence.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Code/Player/Player.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Code/Items/LampItem.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Code/Items/ChairItem.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Code/Items/BroomItem.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Code/Items/HedgeHogItem.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Code/Enemies/Pumpkin.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Art/Tilesets/house.tres" type="TileSet" id=14]
-[ext_resource path="res://Code/Items/FlowerItem.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Code/Items/TeddyItem.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Code/Items/QuillItem.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Code/Items/PumpkinItem.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Code/Items/TeapotItem.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Art/Pngs/Controls.png" type="Texture" id=20]
 [ext_resource path="res://Code/Enemies/HedgeHog.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Code/Enemies/CornWalker.tscn" type="PackedScene" id=22]
@@ -40,6 +29,7 @@
 [ext_resource path="res://Art/Pngs/Text1.png" type="Texture" id=38]
 
 [node name="World" type="YSort"]
+position = Vector2( -4.5, -8.25 )
 script = ExtResource( 23 )
 
 [node name="Back" type="TileMap" parent="."]
@@ -169,7 +159,7 @@ position = Vector2( -144, 104 )
 position = Vector2( 160, 48 )
 
 [node name="Player" parent="." instance=ExtResource( 8 )]
-position = Vector2( 144, 168 )
+position = Vector2( 247.945, 59.1055 )
 speed = 225
 reload_time_msecs = 100
 
@@ -186,42 +176,9 @@ script = ExtResource( 2 )
 
 [node name="Tween" type="Tween" parent="Camera2D"]
 
-[node name="BombItem" parent="." instance=ExtResource( 5 )]
-position = Vector2( 140, 113 )
-
-[node name="HedgeHogItem" parent="." instance=ExtResource( 12 )]
-position = Vector2( 104, 216 )
-
-[node name="KnifeItem" parent="." instance=ExtResource( 6 )]
-position = Vector2( 140.388, 222.854 )
-
-[node name="BroomItem" parent="." instance=ExtResource( 11 )]
-position = Vector2( 228.916, 107.657 )
-
-[node name="ChairItem" parent="." instance=ExtResource( 10 )]
-position = Vector2( 217.792, 220.489 )
-
-[node name="LampItem" parent="." instance=ExtResource( 9 )]
-position = Vector2( 375.122, 183.408 )
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2( 375.122, 183.408 )
 color = Color( 0.647059, 0.592157, 0.694118, 1 )
-
-[node name="TeddyItem" parent="." instance=ExtResource( 16 )]
-position = Vector2( 199.327, 158.352 )
-
-[node name="TeapotItem" parent="." instance=ExtResource( 19 )]
-position = Vector2( 240.117, 175.303 )
-
-[node name="QuillItem" parent="." instance=ExtResource( 17 )]
-position = Vector2( 275.609, 201.26 )
-
-[node name="PumpkinItem" parent="." instance=ExtResource( 18 )]
-position = Vector2( 309.511, 141.93 )
-
-[node name="FlowerItem" parent="." instance=ExtResource( 15 )]
-position = Vector2( 346.063, 236.752 )
 
 [node name="Fence2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 568, 440 )
@@ -237,7 +194,19 @@ position = Vector2( 360, 296 )
 
 [node name="BG_music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 24 )
-volume_db = -15.0
+volume_db = -40.0
+
+[node name="LootBoxStart1" parent="." instance=ExtResource( 25 )]
+position = Vector2( 247.936, 61.1468 )
+lootroom = -1
+
+[node name="LootBoxStart2" parent="." instance=ExtResource( 25 )]
+position = Vector2( 247.936, 61.1468 )
+lootroom = -1
+
+[node name="LootBoxStart3" parent="." instance=ExtResource( 25 )]
+position = Vector2( 247.936, 61.1468 )
+lootroom = -1
 
 [node name="LootBox" parent="." instance=ExtResource( 25 )]
 position = Vector2( 387.495, 412.95 )
