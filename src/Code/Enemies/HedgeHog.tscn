@@ -10,7 +10,7 @@ extents = Vector2( 8.96547, 7.28962 )
 [node name="HedgeHog" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 speed = 50
-health = 5.0
+health = 2.0
 
 [node name="Sprite" parent="." index="0"]
 position = Vector2( 0, -11.1369 )
