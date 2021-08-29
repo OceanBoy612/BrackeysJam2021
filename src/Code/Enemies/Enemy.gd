@@ -58,6 +58,8 @@ func damage(amt: float):
 		set_physics_process(false)
 		disable_collisions()
 		dead = true
+		if is_in_group("spawned_enemies"):
+			remove_from_group("spawned_enemies")
 		$Healthbar.hide()
 		
 #		yield($Sprite, "animation_finished")
