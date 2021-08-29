@@ -22,7 +22,8 @@ func on_player_shot():
 
 func on_player_moved():
 #	cam.add_zoom(0.10)
-	cam.add_trauma(0.016, 0.1)
+#	cam.add_trauma(0.016, 0.1)
+	pass
 
 
 func on_player_died():

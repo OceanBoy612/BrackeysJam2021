@@ -151,6 +151,8 @@ func pickup_item(item: String):
 
 
 func damage(amt: float):
+	if amt > 1:
+		amt = 1
 	health -= amt
 #	print("player health", health)
 	$Healthbar.value = health

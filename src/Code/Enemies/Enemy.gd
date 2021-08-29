@@ -11,6 +11,7 @@ export var knockbackSpeed = 300
 var move_dir = Vector2(1,0)
 var hitstun = 0
 var knockback = Vector2.ZERO
+var dead = false
 
 
 func _ready():
@@ -55,13 +56,22 @@ func damage(amt: float):
 	if health <= 0:
 		emit_signal("died")
 		set_physics_process(false)
-		yield($Sprite, "animation_finished")
-		queue_free()
+		disable_collisions()
+		dead = true
+		$Healthbar.hide()
+		
+#		yield($Sprite, "animation_finished")
+#		yield($Sprite, "animation_finished")
+#		queue_free()
 	else:
 		emit_signal("hit")
 
 
 ### Helper functions ###
+func disable_collisions():
+	$Shape.set_deferred("disabled", true)
+
+
 func get_dir_to_player() -> Vector2:
 	return (Globals.player.global_position - global_position).normalized()
 

@@ -11,7 +11,7 @@ radius = 6.94423
 
 [node name="HedgeHogBullet" instance=ExtResource( 1 )]
 speed = 350.0
-damage = 5
+damage = 11
 shot_cone = 60.0
 break_sound = ExtResource( 4 )
 scene_to_spawn = ExtResource( 2 )

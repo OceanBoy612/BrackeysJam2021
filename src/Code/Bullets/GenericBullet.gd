@@ -78,3 +78,11 @@ func die():
 	
 	queue_free() 
 
+
+func hurt_player(toggle: bool=true):
+	call_deferred("set_collision_mask_bit", 1, toggle) 
+#	call_deferred("set_collision_mask_bit", 2, !toggle) 
+#	call_deferred("set_collision_mask_bit", 3, !toggle) 
+	
+#	call_deferred("set_collision_layer_bit", 4, !toggle) 
+	call_deferred("set_collision_layer_bit", 6, toggle) 

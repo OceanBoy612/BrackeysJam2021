@@ -9,7 +9,7 @@ extents = Vector2( 6.94348, 2.40948 )
 
 [node name="QuillBullet" instance=ExtResource( 2 )]
 speed = 250.0
-damage = 3
+damage = 2
 time_alive = 3.0
 rotate = false
 break_sound = ExtResource( 3 )

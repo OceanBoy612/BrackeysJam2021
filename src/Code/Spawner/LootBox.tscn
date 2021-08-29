@@ -1,0 +1,24 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://LootBox.gd" type="Script" id=1]
+[ext_resource path="res://Code/Items/QuillItem.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Code/Items/ChairItem.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Code/Items/KnifeItem.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Code/Items/TeddyItem.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Code/Items/PumpkinItem.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Code/Items/TeapotItem.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Code/Items/BroomItem.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Code/Items/BombItem.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Code/Items/HedgeHogItem.tscn" type="PackedScene" id=10]
+
+[node name="LootBox" type="Node2D"]
+script = ExtResource( 1 )
+item1 = ExtResource( 9 )
+item2 = ExtResource( 3 )
+item3 = ExtResource( 8 )
+item4 = ExtResource( 10 )
+item5 = ExtResource( 4 )
+item6 = ExtResource( 6 )
+item7 = ExtResource( 2 )
+item8 = ExtResource( 5 )
+item9 = ExtResource( 7 )
