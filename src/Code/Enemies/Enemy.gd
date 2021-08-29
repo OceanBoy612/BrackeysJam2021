@@ -23,8 +23,12 @@ func _ready():
 	var spawnsprite = $Node/locator/SpawnSprite
 	spawnsprite.show()
 	spawnsprite.play("Wind up")
+	set_physics_process(false)
+	hide()
 	yield(spawnsprite, "animation_finished")
 	spawnsprite.play("Fire")
+	set_physics_process(true)
+	show()
 	
 
 
