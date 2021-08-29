@@ -13,7 +13,7 @@ extents = Vector2( 10, 16.482 )
 [node name="CornWalker" instance=ExtResource( 2 )]
 script = ExtResource( 4 )
 speed = 165
-health = 15.0
+health = 45.0
 
 [node name="Sprite" parent="." index="0"]
 frames = ExtResource( 1 )

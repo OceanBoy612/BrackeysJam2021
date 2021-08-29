@@ -15,6 +15,7 @@ signal screen_exited
 
 
 export var speed: int = 100
+export var shot_accuracy: int = 10
 var time_since_last_shot: float = OS.get_system_time_msecs() - 1000
 export(int, 0, 4000, 50) var reload_time_msecs: int = 1000
 
@@ -99,7 +100,7 @@ func shoot():
 	# instance from Globals
 	var bullet = Globals.items[current_card_name].instance()
 	bullet.position = position
-	bullet.rotate($Aimer.rotation)
+	bullet.rotate($Aimer.rotation + deg2rad(rand_range(-shot_accuracy, shot_accuracy)))
 	get_parent().add_child(bullet)
 
 	discard_pile.push_back(current_card_name)
