@@ -38,21 +38,20 @@ func windup():
 	charged = true
 	
 	if got_shoot_signal:
-		release()
+		release(false)
 	else:
-		print("HAHA")
 		emit_signal("super_charged")
 
 
 func shoot():
 	got_shoot_signal = true
 	if not charging and charged:
-		release()
+		release(true)
 #	else:
 #		push_error("WHAT?")
 
 
-func release():
+func release(triple:bool=false):
 	if firing:
 		return
 	if not charged or charging:
@@ -62,7 +61,10 @@ func release():
 	firing = true
 	play("Fire")
 	emit_signal("fired")
-	emit_signal("shot")
+	emit_signal("shot") # here we shoot the bullets
+	if triple:
+		emit_signal("shot") 
+		emit_signal("shot") 
 	yield(self, "animation_finished")
 	play("Idle")
 	emit_signal("idled")
